@@ -22,6 +22,22 @@ Wat ga ik morgen doen?
 
 
 
+### Dag 2
+
+Wat heb ik vandaag gedaan?
+- Ik probeerde progressive disclosure met javascript op te lossen omdat CSS heel moeilijk leek. Maar dit bleek ook ontzettend moeilijk te zijn. Ik heb heb allemaal opgegegeven en in de laatste 20 minuten alle JavaScript verwijdert en toch meer met CSS begonnen. Helaas heb ik een heel specifieke visie in mijn hoofd hoe alles moet werken en dat blijkt heel lastig gedaan.
+
+Hoe land duurde het?
+- 4 uur
+
+Wat heb ik geleerd?
+- Dat progressive disclosure gewoon moeilijk is. Zowel met CSS als met JavaScript. En dat ik het niet snap. En dat ik het niet meer leuk vind als het niet werkt. 
+
+Wat ga ik morgen doen?
+- Nieuw vak, CSS! Alleen ben ik dus nog helemaal niet ver met dit vak, en ik zou graag verder willen werken. Maar hopelijk is het morgen weer leuker.
+
+
+
 ## Bronnen
 
 Parent element met de class "step" ophalen: https://chatgpt.com/c/69944df7-89ec-832b-b1fe-6797e323fec2
