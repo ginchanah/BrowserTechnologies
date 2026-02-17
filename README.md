@@ -1,4 +1,6 @@
-# Schoolopdracht voor CMD aan de HvA -> een belastingformulier maken in de huisstijl van de Nederlandse Spoorwegen
+# Schoolopdracht voor CMD aan de HvA
+
+Een belastingformulier maken in de huisstijl van de Nederlandse Spoorwegen
 
 ## Week 1
 ### Dag 1
@@ -17,3 +19,10 @@ Wat heb ik geleerd?
 Wat ga ik morgen doen?
 - kijken naar hoe ik de progressive disclosure beter met javascript kan maken. 
 - kijken naar error prevention
+
+
+
+## Bronnen
+
+Parent element met de class "step" ophalen: https://chatgpt.com/c/69944df7-89ec-832b-b1fe-6797e323fec2
+Closest parent element https://developer.mozilla.org/en-US/docs/Web/API/Element/closest

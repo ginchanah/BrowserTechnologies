@@ -12,135 +12,140 @@
         <p>Hogeschool van Amsterdam - Communication and Mulitmedia Design - Minor Web Design and Development</p>
     </header>
     <main>
-        <form action="">
-            <fieldset>
+        <form action="" method="post">
+            <fieldset id="questionOne">
                 <legend>Gegevens van de overledene</legend>
-                <p>Vul hier de gegevens in van de overledene.</p>
-                <fieldset id="eena">
-                    <label for="voorletter">Voorletter(s)</label>
-                    <input type="text" id="voorletter" required>
-                    <label for="tussenvoegsel">Tussenvoegsel(s)</label>
-                    <input type="text" id="tussenvoegsel" required>
-                    <label for="achternaam">Achternaam</label>
-                    <input type="text" id="achternaam" required>
+                <label for="voorletter">Voorletter(s)</label>
+                <input type="text" id="voorletter">
+                <label for="tussenvoegsel">Tussenvoegsel(s)</label>
+                <input type="text" id="tussenvoegsel">
+                <label for="achternaam">Achternaam</label>
+                <input type="text" id="achternaam">
 
-                    <label for="bsn">BSN overledene</label>
-                    <input type="number" id="bsn" required>
+                <label for="bsn">BSN overledene</label>
+                <input type="number" id="bsn">
 
-                    <label for="overlijdensdatum">Overlijdensdatum</label>
-                    <input type="date" max="2026-02-16" required>
-                </fieldset>
-
-                <fieldset id="eenb">
-                    <fieldset id="eenbeen">
-                        <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
-                        <label for="getrouwdnee">Nee</label>
-                        <input type="radio" id="getrouwdnee" name="getrouwd" class="ganaar1c" required>
-                        <button type="button">Ga verder met vraag 1c.</button>
-
-                        <label for="getrouwdja">Ja</label>
-                        <input type="radio" id="getrouwdja" name="getrouwd" required>
-                    </fieldset>
-
-                    <fieldset id="eenbtwee">
-                        <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</legend>
-                        <label for="notarnee">Nee</label>
-                        <input type="radio" id="notarnee" name="notar" class="ganaar1c" required>
-                        <button type="button">Ga verder met vraag 1c.</button>
-
-                        <label for="notarja">Ja</label>
-                        <input type="radio" id="notarja" name="notar" required>
-                        <button type="button">Stuur een kopie van de akte mee met de aangifte</button>
-                    </fieldset>
-                    <fieldset id="eenbdrie">
-                        <legend>
-                            Hadden de overledene en diens partner een finaal verrekenbeding?
-                        </legend>
-                        <label for="verrekenbedingnee">Nee</label>
-                        <input type="radio" name="verrekenbeding" id="verrekenbedingnee" required>
-
-                        <label for="verrekenbedingja">Ja</label>
-                        <input type="radio" name="verrekenbeding" id="verrekenbedingja" required>
-                    </fieldset>
-
-                    <fieldset id="eenbvier">
-                        <label for="huwelijkdatum">Datum huwelijkse of partnerschapsvoorwaarden</label>
-                        <input type="date" max="2026-02-16" id="huwelijkdatum" required>
-                    </fieldset>
-                </fieldset>
-
-                <fieldset id="eenc">
-                    <fieldset id="eenceen">
-                        <legend>Had de overledene kinderen?</legend>
-                        <label for="kinderennee">Nee</label>
-                        <input type="radio" name="kinderen" id="kinderennee" class="ganaar1d" required>
-                        <button type="button">Ga verder met vraag 1d.</button>
-
-                        <label for="kinderenja">Ja</label>
-                        <input type="radio" name="kinderen" id="kinderenja" required>
-                    </fieldset>
-
-                    <fieldset id="eenctwee">
-                        <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
-                        <label for="kindereneerdernee">Nee</label>
-                        <input type="radio" name="kindereneerder" id="kindereneerdernee" class="ganaar1d" required>
-                        <button type="button">Ga verder met vraag 1d.</button>
-
-                        <label for="kindereneerderja">Ja</label>
-                        <input type="radio" name="kindereneerder" id="kindereneerderja" required>
-                    </fieldset>
-
-                    <fieldset id="eencdrie">
-                        <legend>Had dit overleden kind zelf kinderen?</legend>
-                        <label for="zelfkinderennee">Nee</label>
-                        <input type="radio" name="zelfkinderen" id="zelfkinderennee" required>
-
-                        <label for="zelfkinderenja">Ja</label>
-                        <input type="radio" name="zelfkinderen" id="zelfkinderenja" required>
-                    </fieldset>
-                </fieldset>
-
-                <fieldset id="eend">
-                    <fieldset id="eendeen">
-                        <legend>Had de overledene een testament?</legend>
-                        <label for="testamentnee">Nee</label>
-                        <input type="radio" name="testament" id="testamentnee" class="ganaar2" required>
-                        <button type="button">Ga verder met vraag 2.</button>
-
-                        <label for="testamentja">Ja</label>
-                        <input type="radio" name="testament" id="testamentja" required>
-                        <button>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.</button>
-                    </fieldset>
-
-                    <fieldset id="eendtwee">
-                        <legend>Gegevens van de notaris</legend>
-                        <label for="protocolnotaris">Protocolnummer notaris</label>
-                        <input type="number" name="protocolnotaris" id="protocolnotaris" required>
-
-                        <label for="voorletternotaris">Voorletter(s)</label>
-                        <input type="text" id="voorletternotaris" required>
-                        <label for="tussenvoegselnotaris">Tussenvoegsel(s)</label>
-                        <input type="text" id="tussenvoegselnotaris" required>
-                        <label for="achternaamnotaris">Achternaam</label>
-                        <input type="text" id="achternaamnotaris" required>
-
-                        <label for="verstigingsplaats">Vestigingsplaats</label>
-                        <input type="text" id="vestigingsplaats" name="vestigingsplaats" required>
-
-                        <label for="datumtestament">Datum van het testament of van de laatste wijziging</label>
-                        <input type="date" max="2026-02-16" id="datumtestament" required>
-
-
-                    </fieldset>
-                </fieldset>
-
-                <button type="submit">Forumlier versturen</button>
+                <label for="overlijdensdatum">Overlijdensdatum</label>
+                <input type="date" max="2026-02-16">
             </fieldset>
+
+            <div class="step visible">
+                <fieldset id="questionTwo" class="question">
+                    <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+                    <label for="getrouwdnee">Nee</label>
+                    <input type="radio" id="getrouwdnee" name="getrouwd" class="goTo1c goTo listen">
+                    <button type="button">Ga verder met vraag 1c.</button>
+    
+                    <label for="getrouwdja">Ja</label>
+                    <input type="radio" id="getrouwdja" name="getrouwd" class="goToNextStep listen">
+                </fieldset>
+            </div>
+
+            <div class="step">
+                <fieldset id="questionThree" class="question">
+                    <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</legend>
+                    <label for="notarnee">Nee</label>
+                    <input type="radio" id="notarnee" name="notar" class="goTo1c goTo listen">
+                    <button type="button">Ga verder met vraag 1c.</button>
+    
+                    <label for="notarja">Ja</label>
+                    <input type="radio" id="notarja" name="notar" class="goToNextStep listen">
+                    <button type="button">Stuur een kopie van de akte mee met de aangifte</button>
+                </fieldset>
+            </div>
+
+
+            <div class="step">
+                <fieldset id="questionFour" class="question">
+                    <legend>
+                        Hadden de overledene en diens partner een finaal verrekenbeding?
+                    </legend>
+                    <label for="verrekenbedingnee">Nee</label>
+                    <input type="radio" name="verrekenbeding" id="verrekenbedingnee">
+
+                    <label for="verrekenbedingja">Ja</label>
+                    <input type="radio" name="verrekenbeding" id="verrekenbedingja">
+                </fieldset>
+
+                <div id="questionFive" class="question">
+                    <label for="huwelijkdatum">Datum huwelijkse of partnerschapsvoorwaarden</label>
+                    <input type="date" max="2026-02-16" id="huwelijkdatum">
+                </div>
+        
+                <fieldset id="questionSix" class="question question1c jumpTo">
+                    <legend>Had de overledene kinderen?</legend>
+                    <label for="kinderennee">Nee</label>
+                    <input type="radio" name="kinderen" id="kinderennee" class="goTo1d goTo listen">
+                    <button type="button">Ga verder met vraag 1d.</button>
+
+                    <label for="kinderenja">Ja</label>
+                    <input type="radio" name="kinderen" id="kinderenja" class="goToNextStep listen">
+                </fieldset>
+            </div>
+
+            <div class="step">
+                <fieldset id="questionSeven" class="question">
+                    <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
+                    <label for="kindereneerdernee">Nee</label>
+                    <input type="radio" name="kindereneerder" id="kindereneerdernee" class="goTo1d goTo listen">
+                    <button type="button">Ga verder met vraag 1d.</button>
+    
+                    <label for="kindereneerderja">Ja</label>
+                    <input type="radio" name="kindereneerder" id="kindereneerderja" class="goToNextStep listen">
+                </fieldset>
+            </div>
+
+
+            <div class="step">
+                <fieldset id="questionEight" class="question">
+                    <legend>Had dit overleden kind zelf kinderen?</legend>
+                    <label for="zelfkinderennee">Nee</label>
+                    <input type="radio" name="zelfkinderen" id="zelfkinderennee">
+    
+                    <label for="zelfkinderenja">Ja</label>
+                    <input type="radio" name="zelfkinderen" id="zelfkinderenja">
+                </fieldset>
+    
+                <fieldset id="questionNine" class="question">
+                    <legend>Had de overledene een testament?</legend>
+                    <label for="testamentnee">Nee</label>
+                    <input type="radio" name="testament" id="testamentnee" class="goTo2 goTo listen">
+                    <button type="button">Ga verder met vraag 2.</button>
+    
+                    <label for="testamentja">Ja</label>
+                    <input type="radio" name="testament" id="testamentja" class="goToNextStep listen">
+                    <button>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.</button>
+                </fieldset>
+            </div>
+
+            <div class="step">
+                <fieldset id="questionTen" class="question">
+                    <legend>Gegevens van de notaris</legend>
+                    <label for="protocolnotaris">Protocolnummer notaris</label>
+                    <input type="number" name="protocolnotaris" id="protocolnotaris">
+    
+                    <label for="voorletternotaris">Voorletter(s)</label>
+                    <input type="text" id="voorletternotaris">
+                    <label for="tussenvoegselnotaris">Tussenvoegsel(s)</label>
+                    <input type="text" id="tussenvoegselnotaris">
+                    <label for="achternaamnotaris">Achternaam</label>
+                    <input type="text" id="achternaamnotaris">
+    
+                    <label for="verstigingsplaats">Vestigingsplaats</label>
+                    <input type="text" id="vestigingsplaats" name="vestigingsplaats">
+    
+                    <label for="datumtestament">Datum van het testament of van de laatste wijziging</label>
+                    <input type="date" max="2026-02-16" id="datumtestament">
+                </fieldset>
+            </div>
+
+
+            <button type="submit">Forumlier versturen</button>
         </form>
     </main>
     <footer>
 
     </footer>
-    
+    <script src="index.js"></script>
 </body>
 </html>
