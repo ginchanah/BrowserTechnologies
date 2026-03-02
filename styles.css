@@ -1,3 +1,6 @@
-.skip-questions:has(.goTo:checked) ~ .question {
-    color: red;
+/* progressive disclosure */
+
+.skip-questions:has(.skip:checked) ~ .question {
+    display: none;
 }
+

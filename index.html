@@ -16,14 +16,51 @@
     <!-- grijs als je dingen niet nodig hebt -->
     <!-- stappen laten zien in een aside? met nav? -->
     <main>
-        <nav>
+        <aside>
+            <nav>
+                <h2>1: Gegevens van de overledene</h2>
+                <ul>
+                    <li>
+                        <h2><a href="#section1a">Gegevens van de overledene</a></h2>
+                        <ul>
+                            <li><a href="#question-one">Algemene gegevens van de overledene</a></li>
+                        </ul>
+                    </li>
 
-        </nav>
+                    <li>
+                        <h2><a href="#section1b">Huwelijk van de overledene</a></h2>
+                        <ul>
+                            <li><a href="#question-two">Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</a></li>
+                            <li><a href="#question-three">Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</a></li>
+                            <li><a href="#question-four">Hadden de overledene en diens partner een finaal verrekenbeding?</a></li>
+                            <li><a href="#question-five">Datum huwelijkse of partnerschapsvoorwaarden</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h2><a href="#section1c">Kinderen van de overledene</a></h2>
+                        <ul>
+                            <li><a href="#question-six">Had de overledene kinderen?</a></li>
+                            <li><a href="#question-seven">Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</a></li>
+                            <li><a href="#question-eight">Had dit overleden kind zelf kinderen?</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h2><a href="#section1d">Testament en notaris gegevens</a></h2>
+                        <ul>
+                            <li><a href="#question-nine">Had de overledene een testament?</a></li>
+                            <li><a href="#question-ten">Gegevens van de notaris</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
         <form action="" method="post">
             <fieldset id="section1a">
                 <legend>Gegevens van de overledene</legend>
                 <fieldset id="question-one">
-                    <legend>Gegevens van de overledene</legend>
+                    <legend>Algemene gegevens van de overledene</legend>
 
                     <label for="initials">Voorletter(s)</label>
                     <input type="text" id="initials">
@@ -47,7 +84,7 @@
                 <fieldset id="question-two" class="question skip-questions">
                     <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
                     <label for="married-no">Nee</label>
-                    <input type="radio" id="married-no" name="married" class="goTo">
+                    <input type="radio" id="married-no" name="married" class="skip">
                     <button type="button">Ga verder met vraag 1c.</button>
     
                     <label for="married-yes">Ja</label>
@@ -57,7 +94,7 @@
                 <fieldset id="question-three" class="question skip-questions">
                     <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</legend>
                     <label for="notary-no">Nee</label>
-                    <input type="radio" id="notary-no" name="notary" class="goTo">
+                    <input type="radio" id="notary-no" name="notary" class="skip">
                     <button type="button">Ga verder met vraag 1c.</button>
     
                     <label for="notary-yes">Ja</label>
@@ -88,7 +125,7 @@
                 <fieldset id="question-six" class="question skip-questions">
                     <legend>Had de overledene kinderen?</legend>
                     <label for="children-nee">Nee</label>
-                    <input type="radio" name="children" id="children-nee" class="goTo">
+                    <input type="radio" name="children" id="children-nee" class="skip">
                     <button type="button">Ga verder met vraag 1d.</button>
 
                     <label for="children-yes">Ja</label>
@@ -99,7 +136,7 @@
                 <fieldset id="question-seven" class="question skip-questions">
                     <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
                     <label for="dead-children-no">Nee</label>
-                    <input type="radio" name="dead-children" id="dead-children-no" class="goTo">
+                    <input type="radio" name="dead-children" id="dead-children-no" class="skip">
                     <button type="button">Ga verder met vraag 1d.</button>
     
                     <label for="dead-children-yes">Ja</label>
@@ -121,7 +158,7 @@
                 <fieldset id="question-nine" class="question skip-questions">
                     <legend>Had de overledene een testament?</legend>
                     <label for="will-no">Nee</label>
-                    <input type="radio" name="will" id="will-no" class="goTo">
+                    <input type="radio" name="will" id="will-no" class="skip">
                     <button type="button">Ga verder met vraag 2.</button>
     
                     <label for="will-yes">Ja</label>
