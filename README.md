@@ -37,6 +37,24 @@ Wat ga ik morgen doen?
 - Nieuw vak, CSS! Alleen ben ik dus nog helemaal niet ver met dit vak, en ik zou graag verder willen werken. Maar hopelijk is het morgen weer leuker.
 
 
+### Weekly Check-Out
+
+Ik heb deze week heel veel geprobeert en niet heel veel bereikt. Ik wilde graag elke vraag een voor een laten zien en alleen de nodige vervolgvragen open klappen. Daarmee heb ik de hele structuur van het formulier omgegooid, maar helaas kreeg ik dat niet werkend. Ik kon ook moeilijk om hulp vragen omdat ik dus zo'n andere layout gebruikte dan andere mensen, dus hun oplossingen voor de progressive disclosure werkten niet bij mij. Maar na heel veel proberen en falen en kijken wat andere mensen hebben gedaan heb ik toch maar besloten om het op dezelfde manier op te lossen als mijn klasgenoten. Dus 3 regels CSS en tóch wel de originele layout van het belastingformulier. 
+
+
+## Week 2
+### Dag 3
+
+Wat heb ik vandaag gedaan?
+- tweede pattern in html zettten vraag 3
+- ik probeer hier een radio selectie te maken die automatisch ook link naar een andere input
+
+Hoe land duurde het?
+
+Wat heb ik geleerd?
+
+Wat ga ik morgen doen?
+
 
 ## Bronnen
 
