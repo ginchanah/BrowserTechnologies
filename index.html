@@ -16,7 +16,8 @@
     <!-- grijs als je dingen niet nodig hebt -->
     <!-- stappen laten zien in een aside? met nav? -->
     <main>
-        <aside>
+        <!-- moet ik nog aanpassen -->
+        <aside class="hidden">
             <nav>
                 <h2>1: Gegevens van de overledene</h2>
                 <ul>
@@ -87,7 +88,6 @@
                         <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
                         <label for="married-no">Nee</label>
                         <input type="radio" id="married-no" name="married" class="skip">
-                        <button type="button">Ga verder met vraag 1c.</button>
         
                         <label for="married-yes">Ja</label>
                         <input type="radio" id="married-yes" name="married">
@@ -97,11 +97,14 @@
                         <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</legend>
                         <label for="notary-no">Nee</label>
                         <input type="radio" id="notary-no" name="notary" class="skip">
-                        <button type="button">Ga verder met vraag 1c.</button>
         
                         <label for="notary-yes">Ja</label>
                         <input type="radio" id="notary-yes" name="notary">
-                        <button type="button">Stuur een kopie van de akte mee met de aangifte</button>
+
+                        <div id="kopie-aagifte-container">
+                            <label for="kopie-aangifte">Stuur een kopie van de akte mee met de aangifte</label>
+                            <input type="file" id="kopie-aangifte">
+                        </div>
                     </fieldset>
                 
                     <fieldset id="question-four" class="question">
@@ -128,7 +131,7 @@
                         <legend>Had de overledene kinderen?</legend>
                         <label for="children-nee">Nee</label>
                         <input type="radio" name="children" id="children-nee" class="skip">
-                        <button type="button">Ga verder met vraag 1d.</button>
+    
     
                         <label for="children-yes">Ja</label>
                         <input type="radio" name="children" id="children-yes">
@@ -139,7 +142,6 @@
                         <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
                         <label for="dead-children-no">Nee</label>
                         <input type="radio" name="dead-children" id="dead-children-no" class="skip">
-                        <button type="button">Ga verder met vraag 1d.</button>
         
                         <label for="dead-children-yes">Ja</label>
                         <input type="radio" name="dead-children" id="dead-children-yes">
@@ -161,15 +163,14 @@
                         <legend>Had de overledene een testament?</legend>
                         <label for="will-no">Nee</label>
                         <input type="radio" name="will" id="will-no" class="skip">
-                        <button type="button">Ga verder met vraag 2.</button>
+        
         
                         <label for="will-yes">Ja</label>
                         <input type="radio" name="will" id="will-yes">
-                        <button>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.</button>
                     </fieldset>
     
                     <fieldset id="question-ten" class="question">
-                        <legend>Gegevens van de notaris</legend>
+                        <legend>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.</legend>
                         <label for="protocol-notary">Protocolnummer notaris</label>
                         <input type="number" name="protocol-notary" id="protocol-notary">
         
@@ -192,36 +193,47 @@
 
             <fieldset id="section-three">
                 <legend>Voor wie doet u aangifte?</legend>
-                <fieldset id="section-three-a">
-                    <legend>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen?
-Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). Is er geen executeur aangewezen? Kruis dan aan welke situatie voor u geldt.</legend>
+                <fieldset id="section-three-a" class="skip-questions">
+                    <legend>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen? Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). Is er geen executeur aangewezen? Kruis dan aan welke situatie voor u geldt.</legend>
 
-                    <input type="radio" id="executor" name="executor" checked/>
-                    <label for="executor">Ik ben executeur en doe aangifte voor alle personen en/of instellingen die
-iets krijgen uit de nalatenschap (verkrijgers). Geef aan voor hoeveel verkrijgers u
-aangifte doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee.</label>
+                    <div class="input-container">
+                        <input type="radio" id="executor" name="executor" class="skip" checked/>
+                        <label for="executor">Ik ben executeur en doe aangifte voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). <span>Geef aan voor hoeveel verkrijgers u aangifte doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee.</span></label>
+                    </div>
 
-                    <input type="radio" id="erfgenaam-gemachtigd" name="executor"/>
-                    <label for="erfgenaam-gemachtigd">Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor meerdere
-personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers).
-Geef aan voor hoeveel verkrijgers u aangifte doet. Tel uzelf ook mee.</label>
-                    
-                    <input type="radio" id="erfgenaam-samen" name="executor"/>
-                    <label for="erfgenaam-samen">Ik ben erfgenaam en doe samen met andere erfgenamen aangifte.
-Geef het aantal personen en/of instellingen aan die iets krijgen uit de nalatenschap
-(verkrijgers). Tel uzelf ook mee.</label>
-                    
-                    <input type="radio" id="erfgenaam-alleen" name="executor"/>
-                    <label for="erfgenaam-alleen">Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label>
-                    
-                    <input type="radio" id="geen-erfgenaam" name="executor"/>
-                    <label for="geen-erfgenaam">Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te doen.
-Geef aan voor hoeveel verkrijgers u aangifte doet.</label>
-                    
+                    <div class="input-container">
+                        <input type="radio" id="erfgenaam-gemachtigd" name="executor"/>
+                        <label for="erfgenaam-gemachtigd">Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor meerdere personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). <span>Geef aan voor hoeveel verkrijgers u aangifte doet. Tel uzelf ook mee.</span></label>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="radio" id="erfgenaam-samen" name="executor"/>
+                        <label for="erfgenaam-samen">Ik ben erfgenaam en doe samen met andere erfgenamen aangifte. <span> Geef het aantal personen en/of instellingen aan die iets krijgen uit de nalatenschap (verkrijgers). Tel uzelf ook mee.</span></label>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="radio" id="erfgenaam-alleen" name="executor"/>
+                        <label for="erfgenaam-alleen">Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label>
+                    </div>
+
+                    <div class="input-container">
+                        <input type="radio" id="geen-erfgenaam" name="executor"/>
+                        <label for="geen-erfgenaam">Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te doen. <span>Geef aan voor hoeveel verkrijgers u aangifte doet.</span></label>
+                    </div>
                 </fieldset>
 
-                <input type="number" aria-labelledby="executor-checked" id="number-receivers">
+                <div id="receiver-input-group">
+                    <label for="number-receivers" id="receiver-label">Geef aan voor hoeveel verkrijgers u aangifte doet.</label>
+                    <input type="number" aria-labelledby="executor-checked" id="number-receivers">
+                </div>
 
+                <fieldset id="section-three-b" class="question">
+                    <legend>3b</legend>
+                </fieldset>
+
+                <fieldset id="section-three-c">
+                    <legend>3c</legend>
+                </fieldset>
             </fieldset>
 
 

@@ -47,9 +47,12 @@ Ik heb deze week heel veel geprobeert en niet heel veel bereikt. Ik wilde graag 
 
 Wat heb ik vandaag gedaan?
 - tweede pattern in html zettten vraag 3
-- ik probeer hier een radio selectie te maken die automatisch ook link naar een andere input
+- ik probeer hier een radio selectie te maken die automatisch ook link naar een andere input -> aria labelledby? or do i also change the in general??
+- ik probeerde eerst de hele label te veranderen maar toen dacht ik: wat als je gewoon een eigen label toevoegd op basis van de gecheckde radio button
+- de span krijgt een display hidden zodat het ook goed gaat als je geen js hebt
+- de span wordt de text content van de label van de number input
 
-Hoe land duurde het?
+Hoe lang duurde het?
 
 Wat heb ik geleerd?
 

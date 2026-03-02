@@ -1,6 +1,11 @@
 /* progressive disclosure */
 
-.skip-questions:has(.skip:checked) ~ .question {
+.skip-questions:has(.skip:checked) ~ .question, #notary-no:checked ~ #kopie-aagifte-container {
     display: none;
 }
 
+/* hidden */
+
+.hidden {
+    display: none;
+}
