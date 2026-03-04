@@ -1,11 +1,439 @@
+
+/********************/
+/* MARK: Variables
+/********************/
+
+:root {
+    /* ********** */
+    /* Typography */
+    /* ********** */
+    /* size */
+    --typography-family: Roboto, sans-serif;
+    --typography-size-xxxl: clamp(1.375rem, 1.125rem + 0.8333vi, 1.75rem);
+    --typography-size-xxl: clamp(1.25rem, 1.0833rem + 0.5556vi, 1.5rem);
+    --typography-size-xl: clamp(1.125rem, 1.0417rem + 0.2778vi, 1.25rem);
+    --typography-size-l: clamp(1rem, 0.9167rem + 0.2778vi, 1.125rem);
+    --typography-size-m: 1rem;
+    --typography-size-s: 0.875rem;
+    --typography-size-xs: 0.75rem;
+
+    /* line height */
+    --typography-leading-l: 1.5;
+    --typography-leading-m: 1.25;
+    --typography-leading-s: 1;
+
+    /* weight */
+    --typography-weight-normal: 400;
+    --typography-weight-medium: 500;
+    --typography-weight-bold: 700;
+
+
+
+
+    /***************/
+    /* text colors */
+    /***************/
+
+    /* for primary text and icons */
+    --color-content-default: #252528;
+    /* content on high contrast backgrounds */
+    --color-content-default-inverse: #FFFFFF;
+    /* for headings and more emphasis */
+    --color-content-emphasis: #0B3680;
+    /* for secondary content like help text */
+    --color-content-subtle: #73747A;
+    /* for placeholder content */
+    --color-content-placeholder: #919198;
+    /* links and secondary buttons */
+    --color-content-interactive-default: #0062D1;
+    /* links and secondary buttons on high contrast background */
+    --color-content-interactive-default-inverse: #FFFFFF;
+    /* hover state for interactive elements */
+    --color-content-interactive-hover: #0C44A1;
+    /* pressed/active state for interactive elements */
+    --color-content-interactive-pressed: #0B3680;
+    /* selected state for tabs and menu items in navigation */
+    --color-content-selected: #0062D1;
+    /* informative content, like inline messages */
+    --color-content-info: #0062D1;
+    /* content that reflects a positive outcome, messages inline */
+    --color-content-success: #3D7F67;
+    /* a warning, like a message inline */
+    --color-content-warning: #F05C00;
+    /* an error, or a critical communication */
+    --color-content-error: #CE092D;
+    /* an error on high contrast background */
+    --color-content-error-inverse: #FF9495;
+    /* for content that reflects critical information or actions, like destructive buttons and list items */
+    --color-content-destructive-default: #CE092D;
+    /* hover state for color.content.destructive */
+    --color-content-destructive-hover: #B30424;
+    /* pressed/active state for color.content.destructive */
+    --color-content-destructive-pressed: #9A031E;
+    /* color for content on subtle color.accent backgrounds */
+    --color-content-on-accent-subtle: #4D4D50;
+    /* for logo */
+    --color-content-logo: #0B3680;
+
+    /**************/
+    /* Background */
+    /**************/
+
+    /* default background */
+    --color-background-default: #FFFFFF;
+    /* backgrounds with high contrast, like tooltips */
+    --color-background-default-inverse: #333438;
+    /* use as alternative background tint */
+    --color-background-emphasis-primary: #EBF5FF;
+    --color-background-emphasis-secondary: #F0F1F3;
+    /* brand colors */
+    --color-background-brand-primary: #FEC611;
+    --color-background-brand-secondary: #0B3680;
+    /* hover state */
+    --color-background-hover: #F0F1F3;
+    --color-background-hover-inverse: #FDFDFD;
+    /* pressed state */
+    --color-background-pressed: #E4E5E8;
+    --color-background-pressed-inverse: #FFFFFF;
+    /* selected states, chips, table rows, menu items */
+    --color-background-selected-default:#DBEAFF;
+    --color-background-selected-hover: #C4DBF7;
+    --color-background-selected-pressed: #9AC4F1;
+    /* background for selected states with extra emphasis, like filter chips */
+    --color-background-selected-emphasis-default: #0062D1;
+    --color-background-selected-emphasis-hover: #0A347C;
+    --color-background-selected-emphasis-pressed: #19335E;
+    /* background buttons and interactive elements */
+    --color-background-interactive-default: #0062D1;
+    --color-background-interactive-default-inverse: #FFFFFF;
+    --color-background-interactive-hover: #0B4099;
+    --color-background-interactive-hover-inverse: #EEEFF1;
+    --color-background-interactive-pressed: #0C357E;
+    --color-background-interactive-pressed-inverse: #DDDEE0;
+    /* FORM ELEMENTS, checkboxes, inputs, radio-buttons */
+    --color-background-input: #FFFFFF;
+    /* more notable backgrounds which should be compatible with multiple backgrounds, like toggles */
+    --color-background-alpha-default: #C2C2C7;
+    --color-background-alpha-hover: #C4C4C9;
+    --color-background-alpha-pressed: #B5B5BA;
+    /* for subtle backgrounds that have to be compatible with multiple backgrounds, like skeletons */
+    --color-background-alpha-subtle: #E2E3E6;
+    /* overlay behind dialogs */
+    --color-background-overlay: #727379;
+    /* for more notable informative backgrounds, like a message bar */
+    --color-background-overlay-default: #0060CC;
+    --color-background-overlay-hover: #0D43A0;
+    --color-background-overlay-pressed: #0A357D;
+    /* for subtle informative backgrounds, like a message inline */
+    --color-background-overlay-subtle: #EBF5FF;
+    /* backgrounds that reflect a positiv outcome, like a message bar */
+    --color-background-success-default: #3D7F67;
+    --color-background-success-hover: #2F6354;
+    --color-background-success-pressed: #234A40;
+    /* inline message */
+    --color-background-success-subtle: #D7F8EC;
+    /* background warning */
+    --color-background-warning-default: #F05C00;
+    --color-background-warning-hover: #C74E00;
+    --color-background-warning-pressed: #9E3D04;
+    --color-background-warning-subtle: #FBF1E7;
+    /* background error */
+    --color-background-error-default: #CE092D;
+    --color-background-error-hover: #B30424;
+    --color-background-error-pressed: #92051D;
+    --color-background-error-subtle: #F5E2E4;
+    /* backgrounds that reflect critical information or actions, like destructive primary buttons */
+    --color-background-destructive-default: #CE092D;
+    --color-background-destructive-hover: #B10523;
+    --color-background-destructive-pressed: #99041E;
+    /* backgrounds that have no meaning attached to the color, like tags */
+    --color-background-accent-gray-default: #727379;
+    --color-background-accent-gray-subtle: #E3E4E7;
+    --color-background-accent-blue-default: #005FCB;
+    --color-background-accent-blue-subtle: #DBEAFF;
+    --color-background-accent-orange-default: #F05C00;
+    --color-background-accent-orange-subtle: #EEE1CC;
+    --color-background-accent-green-default: #3A7761;
+    --color-background-accent-green-subtle: #B2EBD3;
+    --color-background-accent-red-default: #EB0E39;
+    --color-background-accent-red-subtle: #F8DADA;
+    --color-background-accent-yellow-default: #EFBA0E;
+    --color-background-accent-yellow-subtle: #FCEFC4;
+    --color-background-accent-purple-default: #885DD0;
+    --color-background-accent-purple-subtle: #EBDEFC;
+    --color-background-accent-pink-default: #D53483;
+    --color-background-accent-pink-subtle: #FDD9EE;
+
+
+
+    /***********/
+    /* Border */
+    /***********/
+
+
+    --color-border-default: #E4E5E8;
+    /* high contrast backgrounds */
+    --color-border-default-inverse: #FDFDFD;
+    /* borders that need more subtlety */
+    --color-border-subtle: #EBECEF;
+    --color-border-emphasis: #B6B6BB;
+    /* interactive borders, like secondary buttons */
+    --color-border-interactive-default: #0062D0;
+    --color-border-interactive-default-inverse: #FFFFFF;
+    --color-border-interactive-hover: #0D439F;
+    --color-border-interactive-pressed: #0B3680;
+    /* FORMS, inputs, checkboxes, radio buttons */
+    --color-border-input-default: #919198;
+    --color-border-input-hover: #73747A;
+    /* informative borders, like a message inline */
+    --color-border-info: #0062D1;
+    /* success */
+    --color-border-success: #3D7F67;
+    /* warning */
+    --color-border-warning: #F05C00;
+    /* error */
+    --color-border-error: #CE092D;
+    /* destructive */
+    --color-border-destructive-default: #CE092D;
+    --color-border-destructive-hover: #B30424;
+    --color-border-destructive-pressed: #9A031E;
+    /* logo */
+    --color-border-logo: transparent;
+    /* selected state, like tabs, menu item, navigation bar */
+    --color-border-selected-default: #0062D1;
+    /* a selected state that needs extra emphasis */
+    --color-border-selected-emphasis: #0B3680;
+    /* the outline in focus states */
+    --color-border-focus: #0062D1;
+
+
+
+
+
+
+    /*******************/
+    /* COLORS DARKMODE */
+    /*******************/
+
+    /***************/
+    /* text colors */
+    /***************/
+
+    /* for primary text and icons */
+    --darkmode-content-default: #C4C5CB;
+    /* content on high contrast backgrounds */
+    --darkmode-content-default-inverse: #252528;
+    /* for headings and more emphasis */
+    --darkmode-content-emphasis: #E4E5E8;
+    /* for secondary content like help text */
+    --darkmode-content-subtle: #979798;
+    /* for placeholder content */
+    --darkmode-content-placeholder: #757677;
+    /* links and secondary buttons */
+    --darkmode-content-interactive-default: #5D9FEA;
+    /* links and secondary buttons on high contrast background */
+    --darkmode-content-interactive-default-inverse: #0C44A1;
+    /* hover state for interactive elements */
+    --darkmode-content-interactive-hover: #9AC4F1;
+    /* pressed/active state for interactive elements */
+    --darkmode-content-interactive-pressed: #C4DBF7;
+    /* selected state for tabs and menu items in navigation */
+    --darkmode-content-selected: #FFFFFF;
+    /* informative content, like inline messages */
+    --darkmode-content-info: #5D9FEA;
+    /* content that reflects a positive outcome, messages inline */
+    --darkmode-content-success: #4FCDA6;
+    /* a warning, like a message inline */
+    --darkmode-content-warning: #FF9544;
+    /* an error, or a critical communication */
+    --darkmode-content-error: #FF9495;
+    /* an error on high contrast background */
+    --darkmode-content-error-inverse: #B30424;
+    /* for content that reflects critical information or actions, like destructive buttons and list items */
+    --darkmode-content-destructive-default: #FF9495;
+    /* hover state for color.content.destructive */
+    --darkmode-content-destructive-hover: #FFBDBE;
+    /* pressed/active state for color.content.destructive */
+    --darkmode-content-destructive-pressed: #FADCDC;
+    /* color for content on subtle color.accent backgrounds */
+    --darkmode-content-on-accent-subtle: #FFFFFF;
+    /* for logo */
+    --darkmode-content-logo: #FED651;
+
+    /**************/
+    /* Background */
+    /**************/
+
+    /* default background */
+    --darkmode-background-default: #0D0E10;
+    /* backgrounds with high contrast, like tooltips */
+    --darkmode-background-default-inverse: #D6D7DD;
+    /* use as alternative background tint */
+    --darkmode-background-emphasis-primary: #1E2C42;
+    --darkmode-background-emphasis-secondary: #333438;
+    /* brand colors */
+    --darkmode-background-brand-primary: #252528;
+    --darkmode-background-brand-secondary: #9AC4F1;
+    /* hover state */
+    --darkmode-background-hover: #202123;
+    --darkmode-background-hover-inverse: #0C0E12;
+    /* pressed state */
+    --darkmode-background-pressed: #343536;
+    --darkmode-background-pressed-inverse: #0D0E13;
+    /* selected states, chips, table rows, menu items */
+    --darkmode-background-selected-default: #343536;
+    --darkmode-background-selected-hover: #454647;
+    --darkmode-background-selected-pressed: #5B5B5D;
+    /* background for selected states with extra emphasis, like filter chips */
+    --darkmode-background-selected-emphasis-default: #5D9FEA;
+    --darkmode-background-selected-emphasis-hover: #9AC4F1;
+    --darkmode-background-selected-emphasis-pressed: #C4DBF7;
+    /* background buttons and interactive elements */
+    --darkmode-background-interactive-default: #5D9FEA;
+    --darkmode-background-interactive-default-inverse: #1B3460;
+    --darkmode-background-interactive-hover: #9AC4F1;
+    --darkmode-background-interactive-hover-inverse: #0B368;
+    --darkmode-background-interactive-pressed: #C4DBF7;
+    --darkmode-background-interactive-pressed-inverse: #0C44A1;
+    /* FORM ELEMENTS, checkboxes, inputs, radio-buttons */
+    --darkmode-background-input: #000000;
+    /* more notable backgrounds which should be compatible with multiple backgrounds, like toggles */
+    --darkmode-background-alpha-default: #5B5B5D;
+    --darkmode-background-alpha-hover: #5B5B5D;
+    --darkmode-background-alpha-pressed: #5B5B5D;
+    /* for subtle backgrounds that have to be compatible with multiple backgrounds, like skeletons */
+    --darkmode-background-alpha-subtle: #28282A;
+    /* overlay behind dialogs */
+    --darkmode-background-overlay: #06070E;
+    /* for more notable informative backgrounds, like a message bar */
+    --darkmode-background-overlay-default: #5D9FEA;
+    --darkmode-background-overlay-hover: #9AC4F1;
+    --darkmode-background-overlay-pressed: #C4DBF7;
+    /* for subtle informative backgrounds, like a message inline */
+    --darkmode-background-overlay-subtle: #28282A;
+    /* backgrounds that reflect a positiv outcome, like a message bar */
+    --darkmode-background-success-default: #4FCDA6;
+    --darkmode-background-success-hover: #9AE0C4;
+    --darkmode-background-success-pressed: #B9F4DB;
+    /* inline message */
+    --darkmode-background-success-subtle: #28282A;
+    /* background warning */
+    --darkmode-background-warning-default: #FF9544;
+    --darkmode-background-warning-hover: #FFBB7A;
+    --darkmode-background-warning-pressed: #F7D7B1;
+    --darkmode-background-warning-subtle: #28282A;
+    /* background error */
+    --darkmode-background-error-default: #FF9495;
+    --darkmode-background-error-hover: #FFBDBE;
+    --darkmode-background-error-pressed: #FADCDC;
+    --darkmode-background-error-subtle: #28282A;
+    /* backgrounds that reflect critical information or actions, like destructive primary buttons */
+    --darkmode-background-destructive-default: #FF9495;
+    --darkmode-background-destructive-hover: #FFBDBE;
+    --darkmode-background-destructive-pressed: #FADCDC;
+    /* backgrounds that have no meaning attached to the color, like tags */
+    --darkmode-background-accent-gray-default: #979798;
+    --darkmode-background-accent-gray-subtle: #343536;
+    --darkmode-background-accent-blue-default: #5D9FEA;
+    --darkmode-background-accent-blue-subtle: #1B3460;
+    --darkmode-background-accent-orange-default: #FF9544;
+    --darkmode-background-accent-orange-subtle: #6A3718;
+    --darkmode-background-accent-green-default: #47BD99;
+    --darkmode-background-accent-green-subtle: #244C40;
+    --darkmode-background-accent-red-default: #EF6666;
+    --darkmode-background-accent-red-subtle: #9A031E;
+    --darkmode-background-accent-yellow-default: #FED651;
+    --darkmode-background-accent-yellow-subtle: #8C7321;
+    --darkmode-background-accent-purple-default: #A780EF;
+    --darkmode-background-accent-purple-subtle: #472F6F;
+    --darkmode-background-accent-pink-default: #EA66AA;
+    --darkmode-background-accent-pink-subtle: #84244B;
+
+
+
+    /***********/
+    /* Border */
+    /***********/
+
+
+    --darkmode-border-default: #343536;
+    /* high contrast backgrounds */
+    --darkmode-border-default-inverse: #0D0E13;
+    /* borders that need more subtlety */
+    --darkmode-border-subtle: #28282A;
+    --darkmode-border-emphasis: #5B5B5D;
+    /* interactive borders, like secondary buttons */
+    --darkmode-border-interactive-default: #5D9FEA;
+    --darkmode-border-interactive-default-inverse: #0C44A1;
+    --darkmode-border-interactive-hover: #9AC4F1;
+    --darkmode-border-interactive-pressed: #C4DBF7;
+    /* FORMS, inputs, checkboxes, radio buttons */
+    --darkmode-border-input-default: #757677;
+    --darkmode-border-input-hover: #979798;
+    /* informative borders, like a message inline */
+    --darkmode-border-info: #5D9FEA;
+    /* success */
+    --darkmode-border-success: #4FCDA6;
+    /* warning */
+    --darkmode-border-warning: #FF9544;
+    /* error */
+    --darkmode-border-error: #FF9495;
+    /* destructive */
+    --darkmode-border-destructive-default: #FF9495;
+    --darkmode-border-destructive-hover: #FFBDBE;
+    --darkmode-border-destructive-pressed: #FADCDC;
+    /* logo */
+    --darkmode-border-logo: #343536;
+    /* selected state, like tabs, menu item, navigation bar */
+    --darkmode-border-selected-default: #FED651;
+    /* a selected state that needs extra emphasis */
+    --darkmode-border-selected-emphasis: #FED651;
+    /* the outline in focus states */
+    --darkmode-border-focus: #5D9FEA;
+}
+
+
+
+/* algemene styling */
+
+* {
+    font-family: var(--typography-family);
+}
+
+
+
 /* progressive disclosure */
 
 .skip-questions:has(.skip:checked) ~ .question, #notary-no:checked ~ #kopie-aagifte-container {
     display: none;
 }
 
-/* hidden */
+/* algemene classes */
 
 .hidden {
     display: none;
+}
+
+/* text transformds */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+
+
+/* ********** */
+/* Question 1 */
+/* ********** */
+
+input:user-invalid {
+    border: 2px solid red;
+}
+
+input:user-valid {
+    border: 2px solid green;
 }

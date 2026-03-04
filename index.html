@@ -66,19 +66,19 @@
                         <legend>Algemene gegevens van de overledene</legend>
     
                         <label for="initials">Voorletter(s)</label>
-                        <input type="text" id="initials">
+                        <input type="text" id="initials" class="uppercase">
     
                         <label for="infix">Tussenvoegsel(s)</label>
-                        <input type="text" id="infix">
+                        <input type="text" id="infix" class="not-required">
     
                         <label for="last-name">Achternaam</label>
-                        <input type="text" id="last-name">
+                        <input type="text" id="last-name" class="capitalize">
     
                         <label for="bsn">BSN overledene</label>
-                        <input type="number" id="bsn">
+                        <input type="text" inputmode="numeric" id="bsn" class="bsn" minlength="8" maxlength="9" pattern="\d{8,9}">
     
                         <label for="death-date">Overlijdensdatum</label>
-                        <input type="date" max="2026-02-16" id="death-date">
+                        <input type="date" id="death-date">
                     </fieldset>
                 </fieldset>
     
@@ -175,14 +175,14 @@
                         <input type="number" name="protocol-notary" id="protocol-notary">
         
                         <label for="initials-notary">Voorletter(s)</label>
-                        <input type="text" id="initials-notary">
+                        <input type="text" id="initials-notary" class="uppercase">
                         <label for="inifx-notary">Tussenvoegsel(s)</label>
-                        <input type="text" id="inifx-notary">
+                        <input type="text" id="inifx-notary" class="not-required">
                         <label for="last-name-notary">Achternaam</label>
-                        <input type="text" id="last-name-notary">
+                        <input type="text" id="last-name-notary" class="capitalize">
         
                         <label for="location">Vestigingsplaats</label>
-                        <input type="text" id="location-notary">
+                        <input type="text" id="location-notary" class="capitalize">
         
                         <label for="date-will">Datum van het testament of van de laatste wijziging</label>
                         <input type="date" max="2026-02-16" id="date-will">
@@ -244,5 +244,6 @@
 
     </footer>
     <script src="index.js"></script>
+    <script src="client.js"></script>
 </body>
 </html>

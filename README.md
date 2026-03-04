@@ -46,20 +46,33 @@ Ik heb deze week heel veel geprobeert en niet heel veel bereikt. Ik wilde graag 
 ### Dag 3
 
 Wat heb ik vandaag gedaan?
-- tweede pattern in html zettten vraag 3
-- ik probeer hier een radio selectie te maken die automatisch ook link naar een andere input -> aria labelledby? or do i also change the in general??
-- ik probeerde eerst de hele label te veranderen maar toen dacht ik: wat als je gewoon een eigen label toevoegd op basis van de gecheckde radio button
-- de span krijgt een display hidden zodat het ook goed gaat als je geen js hebt
-- de span wordt de text content van de label van de number input
+- Workshop JS validation
+- Ik heb de tweede pattern van vraag 3a in mijn HTML gezet
+- Ik dacht, dat ik het beste een radio selectie kan maken, en dat dan de label van de radio button ook de label van de aantal-input wordt. Alleen bleek dat niet heel goed te werken. Ik kon in JS ervoor zorgen dat de label reassigned wordt bij selectie, maar dan gaan er dingen mis bij het formulier versturen, want wat gebeurd er dan met de radio button die geen label meer heeft?
+- Dus ik heb vervolgens iets anders geprobeerd. Elke radio button had wat extra uitleg over de aantal-input. Dus ik heb ervoor gezorg dat die extra uitleg een aparte label voor de aantal-input wordt. De label veranderd nu afhankelijk van welke radio button is geselecteerd, en de extra uitleg wordt door JS uit de radio button label gehaald. Als JS breekt, is de extra uitleg dus nog wel te lezen.
+- Ik heb de weekly geek gelezen
 
 Hoe lang duurde het?
+- 4 uur zelf werken
 
 Wat heb ik geleerd?
+- dat je best wel veel dingen op true/false kunt checked in JS, zelfs een document.querySelector
 
 Wat ga ik morgen doen?
+- Alvast een beetje CSS, de huisstijl kleuren in mijn CSS zetten
+- Beginnen aan validatie
+- Vraag 3b toevoegen
+
+### Dag 4 
+Wat heb ik vandaag gedaan?
+- kijken naar validatie, capitalization etc, 11 proef?? 
+- required js
 
 
 ## Bronnen
 
 Parent element met de class "step" ophalen: https://chatgpt.com/c/69944df7-89ec-832b-b1fe-6797e323fec2
 Closest parent element https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+Elf proef https://financieel.infonu.nl/diversen/180745-elfproef-voor-rekeningnummer-of-burgerservicenummer-bsn.html
+Current time https://www.geeksforgeeks.org/javascript/how-to-get-current-time-in-javascript/
+Date https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
