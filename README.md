@@ -65,8 +65,21 @@ Wat ga ik morgen doen?
 
 ### Dag 4 
 Wat heb ik vandaag gedaan?
-- kijken naar validatie, capitalization etc, 11 proef?? 
-- required js
+- Ik heb vandaag gekeken naar zowel CSS als ook Javascript validatie. Ik heb automatische capitalization toegevoegd voor de velden waarvoor dat nodig is. Verder heb ik de 11 proef toegepast op de BSN nummer velden, en ik heb ervoor gezorgd dat Javascript het huidige datum ophaalt en op basis daarvan de datum velden een max value geeft. En ik heb ervoor gezorgd dat alle velden die zichtbaar zijn required zijn en alles wat niet zichtbaar is niet required is.
+
+Hoe lang duurde het?
+- de hele dag
+
+Wat heb ik geleerd?
+- JS validatie toepassen, dat had ik nog nooit eerder gedaan
+
+Wat ga ik morgen doen?
+- Beginnen aan styling!!
+
+### Weekly check-out
+Tijdens de check-out hebben we besproken, dat voor mij de volgende stap gaat zijn om styling te doen. Ik wilde eerste een goede basis neerzetten, en mijn feedback was dat dat ook het geval was. Maar toch lijkt voor mezelf het alsof ik nog niet heel ver ben, omdat ik dus nog helemaal geen styling heb. Maar het was goed om te horen dat ik toch al best ver ben.
+Wat ik nog zou kunnen doen, is wel nog een extra pattern toevoegen omdat mijn extra pattern toch nog wat weinig is. Verder kan ik nog overwegen om mijn progressive disclosure andersom te stylen, dus vragen pas laten zien als je op ja klikt in plaats van verbergen.
+
 
 
 ## Bronnen
