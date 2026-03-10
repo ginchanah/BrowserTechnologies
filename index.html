@@ -5,243 +5,279 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schoolopdracht Belastingaangifte</title>
     <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     <header>
-        <div>
-            <img src="images/nslogo.png" alt="NS logo">
-            <h1>Dit is een schoolopdracht</h1>
+        <div class="warning-assignment">
+            <div class="content">
+                <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <!--?lit$486208492$--><path d="M12.5 8.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v5.51h1zm-.51 7.51c-.41 0-.75.34-.75.75s.34.75.75.75.75-.34.75-.75-.34-.75-.75-.75"></path><path d="M22.74 17.97h-.01L13.76 2.03C13.4 1.38 12.74 1 12 1s-1.4.39-1.76 1.03L1.26 17.97c-.36.64-.35 1.4.02 2.03s1.02 1 1.74 1h17.95c.72 0 1.38-.38 1.74-1 .37-.63.38-1.39.02-2.03Zm-.88 1.53c-.19.32-.52.51-.88.51H3.02c-.37 0-.69-.19-.88-.51a1.02 1.02 0 0 1 0-1.04L11.1 2.52c.18-.33.52-.52.89-.52s.7.2.89.52l8.97 15.94c.18.33.18.71 0 1.04Z"></path>
+                </svg>
+                <p>Dit is een schoolopdracht</p>
+            </div>
         </div>
-        <p>Hogeschool van Amsterdam - Communication and Multimedia Design - Minor Web Design and Development</p>
+        <div>
+            <div class="content info-uni">
+                <img src="images/nslogo.png" alt="NS logo">
+                <p>HvA</p>
+                <p>CMD</p>
+                <p>Minor Web Design and Development</p>
+            </div>
+        </div>
     </header>
     <!-- patterns voor inputs -->
     <!-- volgende vraag, scroll als het valid is, scroll snap -->
     <!-- grijs als je dingen niet nodig hebt -->
     <!-- stappen laten zien in een aside? met nav? -->
     <main>
-        <!-- moet ik nog aanpassen -->
-        <aside class="hidden">
-            <nav>
-                <h2>1: Gegevens van de overledene</h2>
-                <ul>
-                    <li>
-                        <h2><a href="#section1a">Gegevens van de overledene</a></h2>
-                        <ul>
-                            <li><a href="#question-one">Algemene gegevens van de overledene</a></li>
-                        </ul>
-                    </li>
+        <div class="content">
 
-                    <li>
-                        <h2><a href="#section1b">Huwelijk van de overledene</a></h2>
-                        <ul>
-                            <li><a href="#question-two">Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</a></li>
-                            <li><a href="#question-three">Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</a></li>
-                            <li><a href="#question-four">Hadden de overledene en diens partner een finaal verrekenbeding?</a></li>
-                            <li><a href="#question-five">Datum huwelijkse of partnerschapsvoorwaarden</a></li>
-                        </ul>
-                    </li>
+            <!-- moet ik nog aanpassen -->
+            <aside class="hidden">
+                <nav>
+                    <h2>1: Gegevens van de overledene</h2>
+                    <ul>
+                        <li>
+                            <h2><a href="#section1a">Gegevens van de overledene</a></h2>
+                            <ul>
+                                <li><a href="#question-one">Algemene gegevens van de overledene</a></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <h2><a href="#section1b">Huwelijk van de overledene</a></h2>
+                            <ul>
+                                <li><a href="#question-two">Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</a></li>
+                                <li><a href="#question-three">Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</a></li>
+                                <li><a href="#question-four">Hadden de overledene en diens partner een finaal verrekenbeding?</a></li>
+                                <li><a href="#question-five">Datum huwelijkse of partnerschapsvoorwaarden</a></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <h2><a href="#section1c">Kinderen van de overledene</a></h2>
+                            <ul>
+                                <li><a href="#question-six">Had de overledene kinderen?</a></li>
+                                <li><a href="#question-seven">Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</a></li>
+                                <li><a href="#question-eight">Had dit overleden kind zelf kinderen?</a></li>
+                            </ul>
+                        </li>
+    
+                        <li>
+                            <h2><a href="#section1d">Testament en notaris gegevens</a></h2>
+                            <ul>
+                                <li><a href="#question-nine">Had de overledene een testament?</a></li>
+                                <li><a href="#question-ten">Gegevens van de notaris</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <form action="" method="post">
+                <h1>Aangifte Erfbelasting</h1>
+                <details open>
+                    <summary><span>1</span> Gegevens van de overledene</summary>
+                    <fieldset id="section-one-a">
+                        <legend><span>1a</span> Algemene gegevens van de overledene</legend>
+        
+                        <fieldset id="question-one">
+                            <label for="initials">Voorletter(s)</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="initials" class="uppercase initials" aria-errormessage="err1" aria-invalid="false">
+                            </div>
+                            <div id="err1" class="error-message hidden" aria-live="polite"></div>
+                            
 
-                    <li>
-                        <h2><a href="#section1c">Kinderen van de overledene</a></h2>
-                        <ul>
-                            <li><a href="#question-six">Had de overledene kinderen?</a></li>
-                            <li><a href="#question-seven">Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</a></li>
-                            <li><a href="#question-eight">Had dit overleden kind zelf kinderen?</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <h2><a href="#section1d">Testament en notaris gegevens</a></h2>
-                        <ul>
-                            <li><a href="#question-nine">Had de overledene een testament?</a></li>
-                            <li><a href="#question-ten">Gegevens van de notaris</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        <form action="" method="post">
-            <fieldset id="section-one">
-                <legend>Gegevens van de overledene</legend>
-
-                <fieldset id="section-one-a">
-                    <fieldset id="question-one">
-                        <legend>Algemene gegevens van de overledene</legend>
-    
-                        <label for="initials">Voorletter(s)</label>
-                        <input type="text" id="initials" class="uppercase">
-    
-                        <label for="infix">Tussenvoegsel(s)</label>
-                        <input type="text" id="infix" class="not-required">
-    
-                        <label for="last-name">Achternaam</label>
-                        <input type="text" id="last-name" class="capitalize">
-    
-                        <label for="bsn">BSN overledene</label>
-                        <input type="text" inputmode="numeric" id="bsn" class="bsn" minlength="8" maxlength="9" pattern="\d{8,9}">
-    
-                        <label for="death-date">Overlijdensdatum</label>
-                        <input type="date" id="death-date">
+                            <label for="infix">Tussenvoegsel(s)</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="infix" class="not-required" aria-errormessage="err2" aria-invalid="false">
+                            </div>
+                            <div class="error-message hidden" aria-live="polite" id="err2"></div>
+                            
+        
+                            <label for="last-name">Achternaam</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="last-name" class="capitalize" aria-errormessage="err3" aria-invalid="false">
+                            </div>
+                            <div class="error-message hidden" aria-live="polite" id="err3"></div>
+                            
+        
+                            <label for="bsn">BSN overledene</label>
+                            <div class="input-wrapper">
+                                <input type="text" inputmode="numeric" id="bsn" class="bsn" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err4" aria-invalid="false">
+                            </div>
+                            <div class="error-message hidden" aria-live="polite" id="err4"></div>
+                            
+        
+                            <label for="death-date">Overlijdensdatum</label>
+                            <div class="input-wrapper">
+                                <input type="date" id="death-date"  aria-errormessage="err5" aria-invalid="false">
+                            </div>
+                            <div class="error-message hidden" aria-live="polite" id="err5"></div>
+                        </fieldset>
                     </fieldset>
-                </fieldset>
-    
-                <fieldset id="section-one-b">
-                    <legend>Huwelijk van de overledene</legend>
-                    <fieldset id="question-two" class="question skip-questions">
-                        <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
-                        <label for="married-no">Nee</label>
-                        <input type="radio" id="married-no" name="married" class="skip">
         
-                        <label for="married-yes">Ja</label>
-                        <input type="radio" id="married-yes" name="married">
-                    </fieldset>
-        
-                    <fieldset id="question-three" class="question skip-questions">
-                        <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</legend>
-                        <label for="notary-no">Nee</label>
-                        <input type="radio" id="notary-no" name="notary" class="skip">
-        
-                        <label for="notary-yes">Ja</label>
-                        <input type="radio" id="notary-yes" name="notary">
+                    <fieldset id="section-one-b">
+                        <legend><span>1b</span> Huwelijk van de overledene</legend>
+                        <fieldset id="question-two" class="question skip-questions">
+                            <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
+                            <label for="married-yes">Ja</label>
+                            <input type="radio" id="married-yes" name="married" class="show">
 
-                        <div id="kopie-aagifte-container">
-                            <label for="kopie-aangifte">Stuur een kopie van de akte mee met de aangifte</label>
-                            <input type="file" id="kopie-aangifte">
+                            <label for="married-no">Nee</label>
+                            <input type="radio" id="married-no" name="married" class="skip">
+            
+                        </fieldset>
+            
+                        <fieldset id="question-three" class="question skip-questions">
+                            <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</legend>
+                            <label for="notary-yes">Ja</label>
+                            <input type="radio" id="notary-yes" name="notary" class="show">
+
+                            <label for="notary-no">Nee</label>
+                            <input type="radio" id="notary-no" name="notary" class="skip">
+            
+        
+                            <div id="kopie-aagifte-container">
+                                <label for="kopie-aangifte">Stuur een kopie van de akte mee met de aangifte</label>
+                                <input type="file" id="kopie-aangifte">
+                            </div>
+                        </fieldset>
+                    
+                        <fieldset id="question-four" class="question">
+                            <legend>
+                                Hadden de overledene en diens partner een finaal verrekenbeding?
+                            </legend>
+                            <label for="set-off-clause-yes">Ja</label>
+                            <input type="radio" name="set-off-clause-" id="set-off-clause-yes">
+
+                            <label for="set-off-clause-no">Nee</label>
+                            <input type="radio" name="set-off-clause-" id="set-off-clause-no">
+            
+                        </fieldset>
+            
+                        <div id="question-five" class="question">
+                            <label for="marriage-date">Datum huwelijkse of partnerschapsvoorwaarden</label>
+                            <input type="date" max="2026-02-16" id="marriage-date">
                         </div>
                     </fieldset>
-                
-                    <fieldset id="question-four" class="question">
-                        <legend>
-                            Hadden de overledene en diens partner een finaal verrekenbeding?
-                        </legend>
-                        <label for="set-off-clause-no">Nee</label>
-                        <input type="radio" name="set-off-clause-" id="set-off-clause-no">
         
-                        <label for="set-off-clause-yes">Ja</label>
-                        <input type="radio" name="set-off-clause-" id="set-off-clause-yes">
+                    
+                    <fieldset id="section-one-c">
+                        <legend><span>1c</span> Kinderen van de overledene</legend>
+                        <fieldset id="question-six" class="question skip-questions">
+                            <legend>Had de overledene kinderen?</legend>
+                            <label for="children-yes">Ja</label>
+                            <input type="radio" name="children" id="children-yes" class="show">
+
+                            <label for="children-nee">Nee</label>
+                            <input type="radio" name="children" id="children-nee" class="skip">
+        
+                        </fieldset>
+        
+                    
+                        <fieldset id="question-seven" class="question skip-questions">
+                            <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
+                            <label for="dead-children-yes">Ja</label>
+                            <input type="radio" name="dead-children" id="dead-children-yes" class="show">
+
+                            <label for="dead-children-no">Nee</label>
+                            <input type="radio" name="dead-children" id="dead-children-no" class="skip">
+            
+                        </fieldset>
+                    
+                        <fieldset id="question-eight" class="question">
+                            <legend>Had dit overleden kind zelf kinderen?</legend>
+                            <label for="own-children-yes">Ja</label>
+                            <input type="radio" name="own-children" id="own-children-yes">
+
+                            <label for="own-childres-no">Nee</label>
+                            <input type="radio" name="own-children" id="own-childres-no">
+                        </fieldset>
                     </fieldset>
+            
+                    <fieldset id="section-one-d">
+                        <legend><span>1d</span> Testament en notaris gegevens</legend>
+                        <fieldset id="question-nine" class="question skip-questions">
+                            <legend>Had de overledene een testament?</legend>
+                            <label for="will-yes">Ja</label>
+                            <input type="radio" name="will" id="will-yes" class="show">
+
+                            <label for="will-no">Nee</label>
+                            <input type="radio" name="will" id="will-no" class="skip">
+            
+                        </fieldset>
         
-                    <div id="question-five" class="question">
-                        <label for="marriage-date">Datum huwelijkse of partnerschapsvoorwaarden</label>
-                        <input type="date" max="2026-02-16" id="marriage-date">
-                    </div>
-                </fieldset>
+                        <fieldset id="question-ten" class="question">
+                            <legend>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.</legend>
+                            <label for="protocol-notary">Protocolnummer notaris</label>
+                            <input type="number" name="protocol-notary" id="protocol-notary">
+            
+                            <label for="initials-notary">Voorletter(s)</label>
+                            <input type="text" id="initials-notary" class="uppercase initials">
+                            <label for="inifx-notary">Tussenvoegsel(s)</label>
+                            <input type="text" id="inifx-notary" class="not-required">
+                            <label for="last-name-notary">Achternaam</label>
+                            <input type="text" id="last-name-notary" class="capitalize">
+            
+                            <label for="location">Vestigingsplaats</label>
+                            <input type="text" id="location-notary" class="capitalize">
+            
+                            <label for="date-will">Datum van het testament of van de laatste wijziging</label>
+                            <input type="date" max="2026-02-16" id="date-will">
+                        </fieldset>
+                    </fieldset>
+                </details>
     
-                
-                <fieldset id="section-one-c">
-                    <legend>Kinderen van de overledene</legend>
-                    <fieldset id="question-six" class="question skip-questions">
-                        <legend>Had de overledene kinderen?</legend>
-                        <label for="children-nee">Nee</label>
-                        <input type="radio" name="children" id="children-nee" class="skip">
+                <details>
+                    <summary><span>3</span> Voor wie doet u aangifte?</summary>
+                    <fieldset id="section-three-a" class="skip-questions" >
+                        <legend><span>3a</span> Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen? Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). Is er geen executeur aangewezen? Kruis dan aan welke situatie voor u geldt.</legend>
     
+                        <div class="input-container">
+                            <input type="radio" id="executor" name="executor" class="show"  checked/>
+                            <label for="executor">Ik ben executeur en doe aangifte voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). <span>Geef aan voor hoeveel verkrijgers u aangifte doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee.</span></label>
+                        </div>
     
-                        <label for="children-yes">Ja</label>
-                        <input type="radio" name="children" id="children-yes">
-                    </fieldset>
+                        <div class="input-container">
+                            <input type="radio" id="erfgenaam-gemachtigd" name="executor" class="skip"/>
+                            <label for="erfgenaam-gemachtigd">Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor meerdere personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). <span>Geef aan voor hoeveel verkrijgers u aangifte doet. Tel uzelf ook mee.</span></label>
+                        </div>
     
-                
-                    <fieldset id="question-seven" class="question skip-questions">
-                        <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
-                        <label for="dead-children-no">Nee</label>
-                        <input type="radio" name="dead-children" id="dead-children-no" class="skip">
-        
-                        <label for="dead-children-yes">Ja</label>
-                        <input type="radio" name="dead-children" id="dead-children-yes">
-                    </fieldset>
-                
-                    <fieldset id="question-eight" class="question">
-                        <legend>Had dit overleden kind zelf kinderen?</legend>
-                        <label for="own-childres-no">Nee</label>
-                        <input type="radio" name="own-children" id="own-childres-no">
-        
-                        <label for="own-children-yes">Ja</label>
-                        <input type="radio" name="own-children" id="own-children-yes">
-                    </fieldset>
-                </fieldset>
-        
-                <fieldset id="section-one-d">
-                    <legend>Testament en notaris gegevens</legend>
-                    <fieldset id="question-nine" class="question skip-questions">
-                        <legend>Had de overledene een testament?</legend>
-                        <label for="will-no">Nee</label>
-                        <input type="radio" name="will" id="will-no" class="skip">
-        
-        
-                        <label for="will-yes">Ja</label>
-                        <input type="radio" name="will" id="will-yes">
+                        <div class="input-container">
+                            <input type="radio" id="erfgenaam-samen" name="executor" class="skip"/>
+                            <label for="erfgenaam-samen">Ik ben erfgenaam en doe samen met andere erfgenamen aangifte. <span> Geef het aantal personen en/of instellingen aan die iets krijgen uit de nalatenschap (verkrijgers). Tel uzelf ook mee.</span></label>
+                        </div>
+    
+                        <div class="input-container">
+                            <input type="radio" id="erfgenaam-alleen" name="executor" class="skip"/>
+                            <label for="erfgenaam-alleen">Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label>
+                        </div>
+    
+                        <div class="input-container">
+                            <input type="radio" id="geen-erfgenaam" name="executor" class="skip"/>
+                            <label for="geen-erfgenaam">Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te doen. <span>Geef aan voor hoeveel verkrijgers u aangifte doet.</span></label>
+                        </div>
                     </fieldset>
     
-                    <fieldset id="question-ten" class="question">
-                        <legend>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.</legend>
-                        <label for="protocol-notary">Protocolnummer notaris</label>
-                        <input type="number" name="protocol-notary" id="protocol-notary">
-        
-                        <label for="initials-notary">Voorletter(s)</label>
-                        <input type="text" id="initials-notary" class="uppercase">
-                        <label for="inifx-notary">Tussenvoegsel(s)</label>
-                        <input type="text" id="inifx-notary" class="not-required">
-                        <label for="last-name-notary">Achternaam</label>
-                        <input type="text" id="last-name-notary" class="capitalize">
-        
-                        <label for="location">Vestigingsplaats</label>
-                        <input type="text" id="location-notary" class="capitalize">
-        
-                        <label for="date-will">Datum van het testament of van de laatste wijziging</label>
-                        <input type="date" max="2026-02-16" id="date-will">
+                    <div id="receiver-input-group">
+                        <label for="number-receivers" id="receiver-label">Geef aan voor hoeveel verkrijgers u aangifte doet.</label>
+                        <input type="number" aria-labelledby="executor-checked" id="number-receivers">
+                    </div>
+    
+                    <fieldset id="section-three-b" class="question">
+                        <legend><span>3b</span></legend>
                     </fieldset>
-                </fieldset>
-            </fieldset>
-
-
-            <fieldset id="section-three">
-                <legend>Voor wie doet u aangifte?</legend>
-                <fieldset id="section-three-a" class="skip-questions">
-                    <legend>Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen? Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). Is er geen executeur aangewezen? Kruis dan aan welke situatie voor u geldt.</legend>
-
-                    <div class="input-container">
-                        <input type="radio" id="executor" name="executor" class="skip" checked/>
-                        <label for="executor">Ik ben executeur en doe aangifte voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). <span>Geef aan voor hoeveel verkrijgers u aangifte doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee.</span></label>
-                    </div>
-
-                    <div class="input-container">
-                        <input type="radio" id="erfgenaam-gemachtigd" name="executor"/>
-                        <label for="erfgenaam-gemachtigd">Ik ben erfgenaam en ben gemachtigd om aangifte te doen voor meerdere personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). <span>Geef aan voor hoeveel verkrijgers u aangifte doet. Tel uzelf ook mee.</span></label>
-                    </div>
-
-                    <div class="input-container">
-                        <input type="radio" id="erfgenaam-samen" name="executor"/>
-                        <label for="erfgenaam-samen">Ik ben erfgenaam en doe samen met andere erfgenamen aangifte. <span> Geef het aantal personen en/of instellingen aan die iets krijgen uit de nalatenschap (verkrijgers). Tel uzelf ook mee.</span></label>
-                    </div>
-
-                    <div class="input-container">
-                        <input type="radio" id="erfgenaam-alleen" name="executor"/>
-                        <label for="erfgenaam-alleen">Ik ben erfgenaam en doe alleen aangifte voor mijzelf.</label>
-                    </div>
-
-                    <div class="input-container">
-                        <input type="radio" id="geen-erfgenaam" name="executor"/>
-                        <label for="geen-erfgenaam">Ik ben geen erfgenaam, maar ben gemachtigd om aangifte te doen. <span>Geef aan voor hoeveel verkrijgers u aangifte doet.</span></label>
-                    </div>
-                </fieldset>
-
-                <div id="receiver-input-group">
-                    <label for="number-receivers" id="receiver-label">Geef aan voor hoeveel verkrijgers u aangifte doet.</label>
-                    <input type="number" aria-labelledby="executor-checked" id="number-receivers">
-                </div>
-
-                <fieldset id="section-three-b" class="question">
-                    <legend>3b</legend>
-                </fieldset>
-
-                <fieldset id="section-three-c">
-                    <legend>3c</legend>
-                </fieldset>
-            </fieldset>
-
-
-            <button type="submit">Forumlier versturen</button>
-        </form>
+    
+                    <fieldset id="section-three-c">
+                        <legend><span>3c</span></legend>
+                    </fieldset>
+                </details>
+    
+                <button type="submit"><span>Forumlier versturen</span></button>
+            </form>
+        </div>
     </main>
     <footer>
 

@@ -1,6 +1,7 @@
 const requiredInputs = document.querySelectorAll("input:not(.not-required)")
 const allInputs = document.querySelectorAll("input")
 const skipQuestionInput = document.querySelectorAll(".skip")
+const showQuestionInput = document.querySelectorAll(".show")
 
 // set required attribute for all inputs
 function setRequiredAttribute () {
@@ -37,8 +38,28 @@ uncheckInput()
 
 // when skip questions are activated, then check again for required attributes and display:none;
 skipQuestionInput.forEach((input) => {
-    input.addEventListener("click", setRequiredAttribute && uncheckInput)
-})
+    input.addEventListener("click", () => {
+        setRequiredAttribute();
+        uncheckInput();
+        setMaxDate();
+    });
+});
+
+showQuestionInput.forEach((input) => {
+    input.addEventListener("click", () => {
+        setRequiredAttribute();
+        uncheckInput();
+        setMaxDate();
+    });
+});
+
+
+
+
+
+
+
+
 
 
 
@@ -105,45 +126,60 @@ let burgerServiceNummerValue = burgerServiceNummer.value
 
 burgerServiceNummer.addEventListener("blur", elfProef)
 
+burgerServiceNummer.addEventListener("invalid", function(event) {
+    event.preventDefault();
+});
+
 // check BSN
 function elfProef (event) {
-    let bsnValue = event.target.value
-    let bsnValueSplit = bsnValue.split("")
+    const input = event.target;
+    let bsnValue = input.value.trim();
+    let bsnValueSplit = bsnValue.split("");
+    
 
-    if (bsnValueSplit.length < 8) {
-        event.target.setCustomValidity("BSN is te kort")
-        event.target.reportValidity() 
-    } else if (bsnValueSplit.length === 8) {
-        // If length is 8, add 0 in the beginning
-        bsnValueSplit.unshift("0")
+    // if the bsn is 8, add a 0 in front
+    if (bsnValueSplit.length === 8) {
+        bsnValueSplit.unshift("0");
     }
 
-    // then do 11 proef if length is 9 
-    if (bsnValueSplit.length === 9) {
-        let sum =
-        (9 * bsnValueSplit[0]) +
-        (8 * bsnValueSplit[1]) +
-        (7 * bsnValueSplit[2]) +
-        (6 * bsnValueSplit[3]) +
-        (5 * bsnValueSplit[4]) +
-        (4 * bsnValueSplit[5]) +
-        (3 * bsnValueSplit[6]) +
-        (2 * bsnValueSplit[7]) +
-        (-1 * bsnValueSplit[8])
+    // if bsn is too short check report back
+    if (bsnValueSplit.length < 9) {
+        input.setCustomValidity("BSN is te kort");
+    } else {
+        // 11-proef
+        const sum =
+            9 * bsnValueSplit[0] +
+            8 * bsnValueSplit[1] +
+            7 * bsnValueSplit[2] +
+            6 * bsnValueSplit[3] +
+            5 * bsnValueSplit[4] +
+            4 * bsnValueSplit[5] +
+            3 * bsnValueSplit[6] +
+            2 * bsnValueSplit[7] +
+            -1 * bsnValueSplit[8];
 
-        // get the remainder of the sum, if the remainder is 0 it is dividable by 11!
-        let sumRemainder  = sum % 11
-
-        if (sumRemainder === 0) {
-            event.target.setCustomValidity("") //reset validity
+        if (sum % 11 === 0) {
+            input.setCustomValidity(""); // valid
+            console.log("if")
         } else {
-            event.target.setCustomValidity("Voer een geldige BSN in")
-            event.target.reportValidity() 
+            input.setCustomValidity("Voer een geldige BSN in"); // invalid
+           
+            console.log("else")
         }
 
+        console.dir(input)
     }
 
+    
+    // force CSS update
+    input.classList.remove("trigger-reflow");
+    void input.offsetWidth; // trigger reflow
+    input.checkValidity();
+
+
 }
+
+
 
 
 
@@ -181,6 +217,47 @@ function insertCurrentDay() {
 }
 
 insertCurrentDay();
+
+
+
+// wedding date and testament change can't be after death date 
+
+deathDateInput.addEventListener("change", setMaxDate)
+
+function setMaxDate() {
+    const deathDate = deathDateInput.value; // make sure it's captured correctly
+
+    if (deathDate) { // only set max if deathDate has a value
+        marriageDateInput.setAttribute("max", deathDate);
+        willDateInput.setAttribute("max", deathDate);
+    }
+
+}
+
+
+
+//custom error messages
+requiredInputs.forEach((input) => {
+    const wrapper = input.parentElement; 
+    const error = wrapper.nextElementSibling; 
+
+    // check if the next sibling is an error message
+    if (!error || !error.classList.contains("error-message")) return;
+
+    input.addEventListener("blur", () => {
+        const value = input.value.trim();
+
+        if (value === "") {
+        input.setCustomValidity("Veld is leeg");
+        error.classList.remove("hidden");
+        error.textContent = input.validationMessage;
+        } else {
+        input.setCustomValidity("");
+        error.classList.add("hidden");
+        error.textContent = "";
+        }
+    });
+});
 
 
 

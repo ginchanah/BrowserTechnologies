@@ -80,12 +80,30 @@ Wat ga ik morgen doen?
 Tijdens de check-out hebben we besproken, dat voor mij de volgende stap gaat zijn om styling te doen. Ik wilde eerste een goede basis neerzetten, en mijn feedback was dat dat ook het geval was. Maar toch lijkt voor mezelf het alsof ik nog niet heel ver ben, omdat ik dus nog helemaal geen styling heb. Maar het was goed om te horen dat ik toch al best ver ben.
 Wat ik nog zou kunnen doen, is wel nog een extra pattern toevoegen omdat mijn extra pattern toch nog wat weinig is. Verder kan ik nog overwegen om mijn progressive disclosure andersom te stylen, dus vragen pas laten zien als je op ja klikt in plaats van verbergen.
 
+## Week 3
+### Dag 5 
+Wat heb ik vandaag gedaan?
+- ik was ziek dus ik heb thuis een klein beetje verder gewerkt. 
+- Ik heb mijn progressive disclosure omgedraaid zoals besproken bij de voortgang. 
+- Ik eindelijk aan de styling gewerkt en er tegen aan gelopen dat mijn error messages wel door de browser getoond worden maar dat dat mijn velden niet in CSS invalid maakt... ik weet niet zo goed wat ik hieraan moet doen
+![validity](/images/readme/validity.png)
+- Verder heb ik voor nog meer progressive disclosure ervoor gekozen om van de verschillende vragen details te maken, zodat er niet altijd het hele formulier open staat
+![details](images/readme/details.png)
+- mooie 
+
+Hoe lang duurde het?
+- de hele dag
+
+Wat heb ik geleerd?
+- dat validity in CSS en JS niet zo goed samenwerkt... of ik iets verkeerd doe, dat kan ook
+
 
 
 ## Bronnen
 
-Parent element met de class "step" ophalen: https://chatgpt.com/c/69944df7-89ec-832b-b1fe-6797e323fec2
-Closest parent element https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
-Elf proef https://financieel.infonu.nl/diversen/180745-elfproef-voor-rekeningnummer-of-burgerservicenummer-bsn.html
-Current time https://www.geeksforgeeks.org/javascript/how-to-get-current-time-in-javascript/
-Date https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Parent element met de class "step" ophalen: https://chatgpt.com/c/69944df7-89ec-832b-b1fe-6797e323fec2
+- Closest parent element https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+- Elf proef https://financieel.infonu.nl/diversen/180745-elfproef-voor-rekeningnummer-of-burgerservicenummer-bsn.html
+- Current time https://www.geeksforgeeks.org/javascript/how-to-get-current-time-in-javascript/
+- Date https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+- Custom details arrow https://www.tutorialpedia.org/blog/can-i-replace-the-expand-icon-of-the-details-element/
