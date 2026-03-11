@@ -99,6 +99,24 @@ Wat heb ik geleerd?
 
 
 
+
+### Dag 6
+Wat heb ik vandaag gedaan?
+- validatie. heel veel validatie.
+
+Hoe lang duurde het?
+- de hele dag
+
+Wat heb ik geleerd? 
+- heel veel javascript, hoe 
+
+Wat ga ik morgen doen?
+- Mitchel zei: "wat als de javascript uit staat?". Dat is een hele goede vraag. De validatie doet het dan volgens mij niet meer zo goed. Hm. Ik moet even kijken wat ik daarmee doe. 
+- Validatie mooier maken, het werkt nu wel goed maar soms op momenten waarop je dat niet wilt. Zoals als je de pagina opent. 
+- Betere styling voor de delen waar ik nu nog geen aandacht aan heb besteed
+
+
+
 ## Bronnen
 
 - Parent element met de class "step" ophalen: https://chatgpt.com/c/69944df7-89ec-832b-b1fe-6797e323fec2

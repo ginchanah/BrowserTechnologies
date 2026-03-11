@@ -430,7 +430,7 @@
 
 body {
     margin: 0;
-    overflowX: hidden;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -455,10 +455,15 @@ input {
     border: 2px solid var(--color-border-input-default);
     border-radius: 4px;
 
+}
+
+input:not(.invalid), input:not(:invalid){
     &:hover {
         border-color: var(--color-border-input-hover)
     }
 }
+
+
 
 .content {
     width: clamp(1rem, 100%, var(--breakpoint-l));
@@ -531,28 +536,38 @@ input {
 
 }
 
-input:invalid {
+input:not(.custom-error):invalid, input:not(.custom-error):user-invalid, .invalid {
     border: 2px solid var(--color-border-error);
-}
 
-input:user-invalid {
-    border: 2px solid var(--color-border-error);
-}
-
-input:valid {
-    border: 2px solid var(--color-border-success);
     &:focus-visible {
+        border-color: var(--color-border-focus);
+    }
+}
+
+
+
+input:not(.custom-error):user-valid, .valid {
+    border: 2px solid var(--color-border-success);
+    &:not(:focus-visible):hover {
         border-color: var(--color-border-success);
+    }
+
+    &:focus-visible {
+        border-color: var(--color-border-focus);
     }
 }
 
 input:focus-visible {
     border: 2px solid var(--color-border-focus);
     outline: none;
+    &:hover {
+        border-color: var(--color-border-focus);
+    }
 }
 
 .error-message {
     color: var(--color-content-error);
+    margin: 0;
 }
 
 

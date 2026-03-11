@@ -18,7 +18,15 @@ function setRequiredAttribute () {
     })
 }
 
+
+// i guess I'm doing all error messages custom
 setRequiredAttribute()
+
+requiredInputs.forEach(input => {
+    input.addEventListener("invalid", (e) => {
+        e.preventDefault(); 
+    });
+});
 
 // if display none OR parent had display none then uncheck. 
 function uncheckInput() {
@@ -75,6 +83,7 @@ const checkedExecutorInput = document.querySelectorAll("#section-three-a input")
 const executorLabel = document.querySelectorAll("#section-three-a label")
 const receiversInputLabel = document.querySelector("#receiver-label")
 const receiverInputGroup = document.querySelector("#receiver-input-group")
+const receiverInput = document.getElementById("number-receivers")
 
 //hide all spans with the extra information
 function hideSpans() {
@@ -95,8 +104,10 @@ function checkExecutorInput() {
         receiverInputGroup.classList.remove("hidden")
         const checkedLabel = document.querySelector(".input-container:has(input:checked) label span")
         receiversInputLabel.textContent = checkedLabel.textContent 
+        receiverInput.setAttribute("required", "")
     } else {
         receiverInputGroup.classList.add("hidden")
+        receiverInput.setAttribute("required", "false")
     }
     
 
@@ -124,17 +135,19 @@ checkedExecutorInput.forEach((input) => {
 const burgerServiceNummer = document.querySelector(".bsn")
 let burgerServiceNummerValue = burgerServiceNummer.value
 
-burgerServiceNummer.addEventListener("blur", elfProef)
+burgerServiceNummer.addEventListener("blur", elfProef(burgerServiceNummer))
 
 burgerServiceNummer.addEventListener("invalid", function(event) {
     event.preventDefault();
 });
 
 // check BSN
-function elfProef (event) {
-    const input = event.target;
+function elfProef (input) {
+    // const input = event.target;
     let bsnValue = input.value.trim();
     let bsnValueSplit = bsnValue.split("");
+    const error = document.querySelector("#err4");
+
     
 
     // if the bsn is 8, add a 0 in front
@@ -145,6 +158,15 @@ function elfProef (event) {
     // if bsn is too short check report back
     if (bsnValueSplit.length < 9) {
         input.setCustomValidity("BSN is te kort");
+        // check if the next sibling is an error message
+        if (error) {
+            error.classList.remove("hidden");
+            input.classList.add("invalid")
+            input.classList.remove("valid")
+            input.setAttribute("aria-invalid", "true");
+            error.textContent = input.validationMessage;
+
+        }
     } else {
         // 11-proef
         const sum =
@@ -160,28 +182,23 @@ function elfProef (event) {
 
         if (sum % 11 === 0) {
             input.setCustomValidity(""); // valid
-            console.log("if")
+            error.classList.add("hidden");
+            input.classList.add("valid")
+            input.classList.remove("invalid")
+            error.textContent = "";
+            input.setAttribute("aria-invalid", "false");
         } else {
             input.setCustomValidity("Voer een geldige BSN in"); // invalid
-           
-            console.log("else")
+            error.classList.remove("hidden");
+            input.classList.remove("valid");
+            input.classList.add("invalid")
+            error.textContent = input.validationMessage;
+            input.setAttribute("aria-invalid", "true");
         }
-
-        console.dir(input)
-    }
-
-    
-    // force CSS update
-    input.classList.remove("trigger-reflow");
-    void input.offsetWidth; // trigger reflow
-    input.checkValidity();
+    } 
 
 
 }
-
-
-
-
 
 
 
@@ -198,14 +215,13 @@ let year = currentDay.getFullYear();
 
 // Format date as DD/MM/YYYY
 let formattedDate = `${year}-${month}-${day}`;
-console.log(`Current Date: ${formattedDate}`);
 
 
 //get the death-date input
 const deathDateInput = document.querySelector("#death-date")
 const marriageDateInput = document.querySelector("#marriage-date")
 const willDateInput = document.querySelector("#date-will")
-console.log(deathDateInput)
+
 
 function insertCurrentDay() {
     // set the value to current day
@@ -236,29 +252,172 @@ function setMaxDate() {
 
 
 
-//custom error messages
-requiredInputs.forEach((input) => {
-    const wrapper = input.parentElement; 
-    const error = wrapper.nextElementSibling; 
+//custom error messages for empty fields for all input types
+function emptyError(input) {
+    const errorId = input.getAttribute("aria-errormessage");
+    const errorMessage = errorId ? document.getElementById(errorId) : null;
+    console.log(errorMessage, "errorMessage")
+    
+    
+    let isEmpty = false;
+    let customValidationMessage = "";
 
-    // check if the next sibling is an error message
-    if (!error || !error.classList.contains("error-message")) return;
+    if (input.type === "file") {
+        isEmpty = input.files.length === 0;
+        customValidationMessage = "Selecteer een bestand";
+    } else if (input.type === "date") {
+        isEmpty = !input.value;
+        customValidationMessage = "Kies een datum";
+    } else if (input.type === "number") {
+        // has to be extra apparently
+        isEmpty = input.value === "";
+        customValidationMessage = "Veld is leeg";
+        
+    } else {
+        isEmpty = input.value.trim() === "";
+        customValidationMessage = "Veld is leeg";
+    }
 
-    input.addEventListener("blur", () => {
-        const value = input.value.trim();
+    if (isEmpty) {
+        // invalid
+        input.setCustomValidity(customValidationMessage);
+        input.setAttribute("aria-invalid", "true");
 
-        if (value === "") {
+        if (errorMessage) {
+            errorMessage.classList.remove("hidden");
+            errorMessage.textContent = input.validationMessage;
+        }
+    } else {
+        // valid
+        input.setCustomValidity("");
+        input.setAttribute("aria-invalid", "false");
+
+        if (errorMessage) {
+            errorMessage.classList.add("hidden");
+            errorMessage.textContent = "";
+        }
+    }
+}
+
+const notCustomInputs = Array.from(requiredInputs).filter(input => !input.classList.contains("custom-error"));
+
+notCustomInputs.forEach(input => {
+    input.addEventListener("blur", () => emptyError(input));
+});
+
+function emptyErrorCheck() {
+    notCustomInputs.forEach(input => emptyError(input));
+}
+
+
+// check if there are empty radio buttons 
+
+const radioFieldset = document.querySelectorAll("fieldset:has(>div>input[type='radio'])")
+
+function radioEmpty() {
+    radioFieldset.forEach((fieldset) => {
+        const radios = fieldset.querySelectorAll("input[type='radio']");
+        const error = fieldset.querySelector(".error-message");
+
+        if (!error) return;
+
+        // check if radios are checked
+        const anyChecked = Array.from(radios).some(radio => radio.checked);
+        
+        if (anyChecked) {
+            // valid
+            radios.forEach(radio => radio.setCustomValidity(""));
+            error.classList.add("hidden");
+            error.textContent = "";
+            fieldset.setAttribute("aria-invalid", "false");
+        } else {
+            // invalid
+            const message = "Kies een optie";
+            radios.forEach(radio => radio.setCustomValidity(message));
+            error.classList.remove("hidden");
+            error.textContent = message; 
+            fieldset.setAttribute("aria-invalid", "true");
+        }
+    })
+}
+
+radioFieldset.forEach((fieldset) => {
+    const radios = fieldset.querySelectorAll("input[type='radio']");
+    radios.forEach((radio) => {
+        radio.addEventListener("change", radioEmpty);
+    })
+
+})
+
+// set custom validity if the number input is 0 or lower 
+const numberInputs = document.querySelectorAll("input[type=number]");
+
+numberInputs.forEach(input => {
+    input.addEventListener("blur", () => checkMinimumNumber(input));
+});
+
+function checkMinimumNumber(input) {
+    const error = input.nextElementSibling; // assumes <p> immediately after input
+
+    // check if empty
+    if (input.value === "") {
         input.setCustomValidity("Veld is leeg");
         error.classList.remove("hidden");
         error.textContent = input.validationMessage;
-        } else {
-        input.setCustomValidity("");
-        error.classList.add("hidden");
-        error.textContent = "";
+        input.setAttribute("aria-invalid", "true");
+        input.classList.remove("valid");
+        input.classList.add("invalid");
+        return;
+    }
+
+    // check if less than 0
+    if (Number(input.value) < 0) {
+        input.setCustomValidity("Vul een getal van minimaal 0 in");
+        error.classList.remove("hidden");
+        error.textContent = input.validationMessage;
+        input.setAttribute("aria-invalid", "true");
+        input.classList.remove("valid");
+        input.classList.add("invalid");
+        return;
+    }
+
+    // valid input
+    input.setCustomValidity("");
+    error.classList.add("hidden");
+    error.textContent = "";
+    input.setAttribute("aria-invalid", "false");
+    input.classList.add("valid");
+    input.classList.remove("invalid");
+}
+
+
+function checkMinimumNumberEnd() {
+    numberInputs.forEach(input => checkMinimumNumber(input));
+}
+
+
+
+//check all validation again when pressing the sumbit button and open details with errors
+function openDetails() {
+    const allDetails = document.querySelectorAll("details")
+    allDetails.forEach(details => {
+        const error = details.querySelector(".error-message");
+        const invalidInput = details.querySelector("input.invalid, input:invalid, select:invalid, textarea:invalid");
+
+        if ((error && !error.classList.contains("hidden")) || invalidInput) {
+            details.open = true;
         }
     });
-});
+}
 
+const submitButton = document.querySelector("#submit-button")
+submitButton.addEventListener("click", checkValidation)
 
-
-
+//add all error messages and open the details with invalid fields on clicking the submit button
+function checkValidation () {
+    emptyErrorCheck();
+    elfProef(burgerServiceNummer);
+    radioEmpty();
+    openDetails();
+    checkMinimumNumberEnd();
+}

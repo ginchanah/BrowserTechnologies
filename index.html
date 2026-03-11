@@ -86,74 +86,83 @@
                             <div class="input-wrapper">
                                 <input type="text" id="initials" class="uppercase initials" aria-errormessage="err1" aria-invalid="false">
                             </div>
-                            <div id="err1" class="error-message hidden" aria-live="polite"></div>
+                            <p id="err1" class="error-message hidden" aria-live="polite"></p>
                             
 
                             <label for="infix">Tussenvoegsel(s)</label>
                             <div class="input-wrapper">
                                 <input type="text" id="infix" class="not-required" aria-errormessage="err2" aria-invalid="false">
                             </div>
-                            <div class="error-message hidden" aria-live="polite" id="err2"></div>
+                            <p class="error-message hidden" aria-live="polite" id="err2"></p>
                             
         
                             <label for="last-name">Achternaam</label>
                             <div class="input-wrapper">
                                 <input type="text" id="last-name" class="capitalize" aria-errormessage="err3" aria-invalid="false">
                             </div>
-                            <div class="error-message hidden" aria-live="polite" id="err3"></div>
+                            <p class="error-message hidden" aria-live="polite" id="err3"></p>
                             
         
                             <label for="bsn">BSN overledene</label>
                             <div class="input-wrapper">
-                                <input type="text" inputmode="numeric" id="bsn" class="bsn" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err4" aria-invalid="false">
+                                <input type="text" inputmode="numeric" id="bsn" class="bsn custom-error" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err4" aria-invalid="false">
                             </div>
-                            <div class="error-message hidden" aria-live="polite" id="err4"></div>
+                            <p class="error-message hidden" aria-live="polite" id="err4"></p>
                             
         
                             <label for="death-date">Overlijdensdatum</label>
-                            <div class="input-wrapper">
-                                <input type="date" id="death-date"  aria-errormessage="err5" aria-invalid="false">
-                            </div>
-                            <div class="error-message hidden" aria-live="polite" id="err5"></div>
+                            
+                            <input type="date" id="death-date"  aria-errormessage="err5" aria-invalid="false">
+                            <p class="error-message hidden" aria-live="polite" id="err5"></p>
                         </fieldset>
                     </fieldset>
         
                     <fieldset id="section-one-b">
                         <legend><span>1b</span> Huwelijk van de overledene</legend>
-                        <fieldset id="question-two" class="question skip-questions">
+                        <fieldset id="question-two" class="question skip-questions" aria-errormessage="err6" aria-invalid="false">
                             <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
-                            <label for="married-yes">Ja</label>
-                            <input type="radio" id="married-yes" name="married" class="show">
-
-                            <label for="married-no">Nee</label>
-                            <input type="radio" id="married-no" name="married" class="skip">
+                            <div class="radio-wrapper" >
+                                <label for="married-yes">Ja</label>
+                                <input type="radio" id="married-yes" name="married" class="show">
+    
+                                <label for="married-no">Nee</label>
+                                <input type="radio" id="married-no" name="married" class="skip">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err6"></p>
             
                         </fieldset>
             
-                        <fieldset id="question-three" class="question skip-questions">
+                        <fieldset id="question-three" class="question skip-questions" aria-errormessage="err7" aria-invalid="false">
                             <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</legend>
-                            <label for="notary-yes">Ja</label>
-                            <input type="radio" id="notary-yes" name="notary" class="show">
-
-                            <label for="notary-no">Nee</label>
-                            <input type="radio" id="notary-no" name="notary" class="skip">
+                            <div class="radio-wrapper">
+                                <label for="notary-yes">Ja</label>
+                                <input type="radio" id="notary-yes" name="notary" class="show">
+    
+                                <label for="notary-no">Nee</label>
+                                <input type="radio" id="notary-no" name="notary" class="skip">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err7"></p>
             
         
                             <div id="kopie-aagifte-container">
                                 <label for="kopie-aangifte">Stuur een kopie van de akte mee met de aangifte</label>
-                                <input type="file" id="kopie-aangifte">
+                                <input type="file" id="kopie-aangifte" aria-errormessage="errFile" aria-invalid="false">
+                                <p id="errFile" class="error-message hidden" aria-live="polite"></p>
                             </div>
                         </fieldset>
                     
-                        <fieldset id="question-four" class="question">
+                        <fieldset id="question-four" class="question" aria-errormessage="err8" aria-invalid="false">
                             <legend>
                                 Hadden de overledene en diens partner een finaal verrekenbeding?
                             </legend>
-                            <label for="set-off-clause-yes">Ja</label>
-                            <input type="radio" name="set-off-clause-" id="set-off-clause-yes">
-
-                            <label for="set-off-clause-no">Nee</label>
-                            <input type="radio" name="set-off-clause-" id="set-off-clause-no">
+                            <div class="radio-wrapper">
+                                <label for="set-off-clause-yes">Ja</label>
+                                <input type="radio" name="set-off-clause-" id="set-off-clause-yes">
+    
+                                <label for="set-off-clause-no">Nee</label>
+                                <input type="radio" name="set-off-clause-" id="set-off-clause-no">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err8"></p>
             
                         </fieldset>
             
@@ -166,46 +175,59 @@
                     
                     <fieldset id="section-one-c">
                         <legend><span>1c</span> Kinderen van de overledene</legend>
-                        <fieldset id="question-six" class="question skip-questions">
+                        <fieldset id="question-six" class="question skip-questions" aria-errormessage="err9" aria-invalid="false">
                             <legend>Had de overledene kinderen?</legend>
-                            <label for="children-yes">Ja</label>
-                            <input type="radio" name="children" id="children-yes" class="show">
-
-                            <label for="children-nee">Nee</label>
-                            <input type="radio" name="children" id="children-nee" class="skip">
+                            <div class="radio-wrapper">
+                                <label for="children-yes">Ja</label>
+                                <input type="radio" name="children" id="children-yes" class="show">
+    
+                                <label for="children-nee">Nee</label>
+                                <input type="radio" name="children" id="children-nee" class="skip">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err9"></p>
         
                         </fieldset>
         
                     
-                        <fieldset id="question-seven" class="question skip-questions">
+                        <fieldset id="question-seven" class="question skip-questions" aria-errormessage="err10" aria-invalid="false">
                             <legend>Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</legend>
-                            <label for="dead-children-yes">Ja</label>
-                            <input type="radio" name="dead-children" id="dead-children-yes" class="show">
-
-                            <label for="dead-children-no">Nee</label>
-                            <input type="radio" name="dead-children" id="dead-children-no" class="skip">
+                            <div class="radio-wrapper">
+                                <label for="dead-children-yes">Ja</label>
+                                <input type="radio" name="dead-children" id="dead-children-yes" class="show">
+    
+                                <label for="dead-children-no">Nee</label>
+                                <input type="radio" name="dead-children" id="dead-children-no" class="skip">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err10"></p>
             
                         </fieldset>
                     
-                        <fieldset id="question-eight" class="question">
+                        <fieldset id="question-eight" class="question" aria-errormessage="err11" aria-invalid="false">
                             <legend>Had dit overleden kind zelf kinderen?</legend>
-                            <label for="own-children-yes">Ja</label>
-                            <input type="radio" name="own-children" id="own-children-yes">
-
-                            <label for="own-childres-no">Nee</label>
-                            <input type="radio" name="own-children" id="own-childres-no">
+                            <div class="radio-wrapper">
+                                <label for="own-children-yes">Ja</label>
+                                <input type="radio" name="own-children" id="own-children-yes">
+    
+                                <label for="own-childres-no">Nee</label>
+                                <input type="radio" name="own-children" id="own-childres-no">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err11"></p>
                         </fieldset>
                     </fieldset>
             
                     <fieldset id="section-one-d">
                         <legend><span>1d</span> Testament en notaris gegevens</legend>
-                        <fieldset id="question-nine" class="question skip-questions">
+                        <fieldset id="question-nine" class="question skip-questions" aria-errormessage="err5
+                        12" aria-invalid="false">
                             <legend>Had de overledene een testament?</legend>
-                            <label for="will-yes">Ja</label>
-                            <input type="radio" name="will" id="will-yes" class="show">
-
-                            <label for="will-no">Nee</label>
-                            <input type="radio" name="will" id="will-no" class="skip">
+                            <div class="radio-wrapper">
+                                <label for="will-yes">Ja</label>
+                                <input type="radio" name="will" id="will-yes" class="show">
+    
+                                <label for="will-no">Nee</label>
+                                <input type="radio" name="will" id="will-no" class="skip">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err12"></p>
             
                         </fieldset>
         
@@ -221,7 +243,7 @@
                             <label for="last-name-notary">Achternaam</label>
                             <input type="text" id="last-name-notary" class="capitalize">
             
-                            <label for="location">Vestigingsplaats</label>
+                            <label for="location-notary">Vestigingsplaats</label>
                             <input type="text" id="location-notary" class="capitalize">
             
                             <label for="date-will">Datum van het testament of van de laatste wijziging</label>
@@ -263,7 +285,8 @@
     
                     <div id="receiver-input-group">
                         <label for="number-receivers" id="receiver-label">Geef aan voor hoeveel verkrijgers u aangifte doet.</label>
-                        <input type="number" aria-labelledby="executor-checked" id="number-receivers">
+                        <input type="number" id="number-receivers" min="0" aria-errormessage="err13" aria-invalid="false" class="custom-error">
+                        <p class="error-message hidden" aria-live="polite" id="err13"></p>
                     </div>
     
                     <fieldset id="section-three-b" class="question">
@@ -275,7 +298,7 @@
                     </fieldset>
                 </details>
     
-                <button type="submit"><span>Forumlier versturen</span></button>
+                <button type="submit" id="submit-button"><span>Forumlier versturen</span></button>
             </form>
         </div>
     </main>
