@@ -536,7 +536,7 @@ input:not(.invalid), input:not(:invalid){
 
 }
 
-input:not(.custom-error):invalid, input:not(.custom-error):user-invalid, .invalid {
+input:not(.custom-error):user-invalid, input:not(.custom-error):user-invalid, .invalid {
     border: 2px solid var(--color-border-error);
 
     &:focus-visible {

@@ -135,7 +135,7 @@ checkedExecutorInput.forEach((input) => {
 const burgerServiceNummer = document.querySelector(".bsn")
 let burgerServiceNummerValue = burgerServiceNummer.value
 
-burgerServiceNummer.addEventListener("blur", elfProef(burgerServiceNummer))
+burgerServiceNummer.addEventListener("blur", () => elfProef(burgerServiceNummer))
 
 burgerServiceNummer.addEventListener("invalid", function(event) {
     event.preventDefault();
@@ -341,13 +341,6 @@ function radioEmpty() {
     })
 }
 
-radioFieldset.forEach((fieldset) => {
-    const radios = fieldset.querySelectorAll("input[type='radio']");
-    radios.forEach((radio) => {
-        radio.addEventListener("change", radioEmpty);
-    })
-
-})
 
 // set custom validity if the number input is 0 or lower 
 const numberInputs = document.querySelectorAll("input[type=number]");

@@ -102,13 +102,13 @@ Wat heb ik geleerd?
 
 ### Dag 6
 Wat heb ik vandaag gedaan?
-- validatie. heel veel validatie.
+- Ik heb vandaag alleen maar aan JavaScript validatie gewerkt
 
 Hoe lang duurde het?
 - de hele dag
 
 Wat heb ik geleerd? 
-- heel veel javascript, hoe 
+- heel veel javascript, ik denk dat ik er morgen nog meer ga leren want dan ga ik alles wat overzichtelijker maken, nu staat alles los maar ik denk dat ik dat ook nog algemener kan doen.
 
 Wat ga ik morgen doen?
 - Mitchel zei: "wat als de javascript uit staat?". Dat is een hele goede vraag. De validatie doet het dan volgens mij niet meer zo goed. Hm. Ik moet even kijken wat ik daarmee doe. 
