@@ -116,6 +116,16 @@ Wat ga ik morgen doen?
 - Betere styling voor de delen waar ik nu nog geen aandacht aan heb besteed
 
 
+## Week 4
+### Dag 7 
+Wat heb ik vandaag gedaan?
+- Final sprints!! die niet helemaal zo final zijn omdat ik nog veel moet doen.
+- Ik heb de tweede pattern toegepast. Ik had tot nu toe alleen maar vraag 3a in mijn code maar ik heb nu ook nog 3b en 3c toegevoegd. Dus ik heb eraan gewerkt dat ik met javascript nieuwe verkrijgers kan toevoegen, maar dat er ook een bepaald aantal verkrijgers beschikbaar zijn als de Javascript uitstaat. Ik voeg hier dynamisch met JS nieuwe HTML toe, maar ik heb ook verkrijgers die op display none staan. Ik heb ervoor gezorgd dat de button om nieuwe verkrijgers toe te voegen verdwijnt als je Javascript uitzet en dat alle 4 standaard verkrijgers te zien zijn. 
+- Verder heb ik alles aangepast wat nog niet goed werkte, ik heb opnieuw naar alle validatie gekeken en wat extra dingen toegevoegd
+- Ik heb verder een error samenvatting voor bovenin de pagina toegevoegd als je op submit klikt
+- 
+
+
 
 ## Bronnen
 

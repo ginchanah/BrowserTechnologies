@@ -472,11 +472,11 @@ input:not(.invalid), input:not(:invalid){
 /* ****** */
 /* MARK: Progressive disclosure
 /* ****** */
-.skip-questions ~ .question, #notary-yes ~ #kopie-aagifte-container {
+.skip-questions ~ .question, .radio-wrapper:has(#notary-yes) ~ #kopie-aagifte-container {
     display: none;
 }
 
-.skip-questions:has(.show:checked) ~ .question, #notary-yes:checked ~ #kopie-aagifte-container {
+.skip-questions:has(.show:checked) ~ .question, .radio-wrapper:has(#notary-yes:checked) ~ #kopie-aagifte-container {
     display: block;
 }
 
@@ -514,10 +514,10 @@ input:not(.invalid), input:not(:invalid){
         display: inline-block;
         width: 1rem;
         height: 1rem;
-        margin-right: 0.5rem;
+        margin-right: -1rem;
     }
 
-    &:has(input:user-valid) {
+    &:has(input:user-valid), &:has(input.valid) {
         &::after {
             content: '';
             background: url("/images/icons/check.svg") no-repeat center;
@@ -526,7 +526,7 @@ input:not(.invalid), input:not(:invalid){
 
     }
 
-    &:has(input:user-invalid) {
+    &:has(input:user-invalid), &:has(input.invalid) {
         &::after {
             content: '';
             background: url("/images/icons/error.svg") no-repeat center;
@@ -627,8 +627,9 @@ header {
         gap: 2rem;
         align-items: center;
 
-        p {
+        a {
             color: var(--color-content-emphasis);
+            text-decoration: none;
             
             margin: 0;
             font-weight: 700;
@@ -656,6 +657,33 @@ main {
     justify-items: center;
     background: var(--color-background-accent-gray-subtle);
     min-height: 100vh;
+
+    /* error overview */
+    .error-overview {
+        max-height: max-content;
+        padding: var(--spacing-inset-m);
+        margin: var(--spacing-inset-m);
+        background: var(--color-background-error-default);
+        color: var(--color-content-default-inverse);
+
+        div {
+            display: flex;
+            align-items: center;
+            h2 {
+                color: inherit;
+            }
+        }
+
+        ul {
+            color: var(--color-content-default-inverse);
+            padding: var(--spacing-inset-m);
+
+            a {
+                color: inherit;
+            }
+        }
+    }
+
 
     fieldset {
         border: none;
@@ -723,7 +751,6 @@ main {
             color: var(--color-content-interactive-default-inverse);
             padding: var(--spacing-inset-s);
             position: relative;
-            overflow: none;
 
             &::before {
                 content: "";
@@ -747,6 +774,8 @@ main {
                 position: relative;
                 z-index: 1;
             }
+
+
 
         }
     }

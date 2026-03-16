@@ -132,21 +132,26 @@ checkedExecutorInput.forEach((input) => {
 
 
 // 11 proef BSN
-const burgerServiceNummer = document.querySelector(".bsn")
+const burgerServiceNummer = document.querySelectorAll(".bsn")
 let burgerServiceNummerValue = burgerServiceNummer.value
 
-burgerServiceNummer.addEventListener("blur", () => elfProef(burgerServiceNummer))
+burgerServiceNummer.forEach((bsn)=> {
+    bsn.addEventListener("blur", () => elfProef(bsn))
+})
 
-burgerServiceNummer.addEventListener("invalid", function(event) {
-    event.preventDefault();
-});
+burgerServiceNummer.forEach((bsn) => {
+    bsn.addEventListener("invalid", function(event) {
+        event.preventDefault();
+    });
+})
+
 
 // check BSN
 function elfProef (input) {
     // const input = event.target;
     let bsnValue = input.value.trim();
     let bsnValueSplit = bsnValue.split("");
-    const error = document.querySelector("#err4");
+    const error = input.closest(".input-wrapper").nextElementSibling;
 
     
 
@@ -246,9 +251,68 @@ function setMaxDate() {
     if (deathDate) { // only set max if deathDate has a value
         marriageDateInput.setAttribute("max", deathDate);
         willDateInput.setAttribute("max", deathDate);
+
+        validateDate({ target: marriageDateInput });
+        validateDate({ target: willDateInput });
     }
 
 }
+
+// check if dates are in right order
+function validateDate(event) {
+    const date = event.target;
+    const value = date.value;
+    if (!value) return;
+
+    const dateValue = new Date(value);
+    const deathDateValue = deathDateInput.value ? new Date(deathDateInput.value) : null;
+
+    
+
+    let customValidationMessage = "";
+
+    // check if the current day input is in the future
+    if (dateValue > currentDay) {
+        customValidationMessage = "Datum mag niet in de toekomst liggen";
+    } 
+    // check if the current input is not in the future but after the death date
+    else if (deathDateValue && dateValue > deathDateValue) {
+        customValidationMessage = "Huwelijksdatum mag niet na overlijdensdatum liggen";
+    }
+
+    date.setCustomValidity(customValidationMessage);
+
+    const errorId = date.getAttribute("aria-errormessage");
+    const errorMessage = errorId ? document.getElementById(errorId) : null;
+
+    // update error message and classes
+    if (errorMessage) {
+        if (customValidationMessage) {
+            errorMessage.textContent = customValidationMessage;
+            errorMessage.classList.remove("hidden");
+
+            date.classList.add("invalid");
+            date.classList.remove("valid");
+            date.setAttribute("aria-invalid", "true");
+        } else {
+            errorMessage.textContent = "";
+            errorMessage.classList.add("hidden");
+
+            date.classList.remove("invalid");
+            date.classList.add("valid");
+            date.setAttribute("aria-invalid", "false");
+        }
+    }
+    
+
+    
+
+    
+
+    
+}
+
+
 
 
 
@@ -259,6 +323,7 @@ function emptyError(input) {
     console.log(errorMessage, "errorMessage")
     
     
+
     let isEmpty = false;
     let customValidationMessage = "";
 
@@ -272,6 +337,8 @@ function emptyError(input) {
         // has to be extra apparently
         isEmpty = input.value === "";
         customValidationMessage = "Veld is leeg";
+
+        
         
     } else {
         isEmpty = input.value.trim() === "";
@@ -282,6 +349,8 @@ function emptyError(input) {
         // invalid
         input.setCustomValidity(customValidationMessage);
         input.setAttribute("aria-invalid", "true");
+        input.classList.add("invalid")
+        input.classList.remove("valid")
 
         if (errorMessage) {
             errorMessage.classList.remove("hidden");
@@ -291,6 +360,8 @@ function emptyError(input) {
         // valid
         input.setCustomValidity("");
         input.setAttribute("aria-invalid", "false");
+        input.classList.add("valid")
+        input.classList.remove("invalid")
 
         if (errorMessage) {
             errorMessage.classList.add("hidden");
@@ -308,6 +379,23 @@ notCustomInputs.forEach(input => {
 function emptyErrorCheck() {
     notCustomInputs.forEach(input => emptyError(input));
 }
+
+
+// add class valid to niet verplichte velden
+// ik snap dat dit niet netjes is maar het lukt me even gewoon niet anders
+
+const notRequiredInputs = document.querySelectorAll(".not-required")
+
+
+notRequiredInputs.forEach(input => {
+    input.addEventListener("blur", () => addValidClass(input));
+});
+
+function addValidClass(input) {
+    input.classList.add("valid");
+}
+
+
 
 
 // check if there are empty radio buttons 
@@ -352,6 +440,8 @@ numberInputs.forEach(input => {
 function checkMinimumNumber(input) {
     const error = input.nextElementSibling; // assumes <p> immediately after input
 
+    if(!error) return;
+
     // check if empty
     if (input.value === "") {
         input.setCustomValidity("Veld is leeg");
@@ -390,6 +480,87 @@ function checkMinimumNumberEnd() {
 
 
 
+
+
+
+
+// nieuwe verkrijgers toevoegen!!!
+// mijn plan is om hier met javascript om elke button klik een nieuwe verkrijger toe te voegen en dan met css als het uitstaat krijg je gewoon 4 verkrijgers
+const invisibleReceiver = document.querySelectorAll(".verkrijger:not(:first-of-type)")
+const addReceiverButton = document.querySelector(".verkrijger-toevoegen")
+
+invisibleReceiver.forEach(receiver => {
+    receiver.classList.add("hidden")
+})
+
+addReceiverButton.classList.remove("hidden")
+
+addReceiverButton.addEventListener("click", addReceiver)
+
+function addReceiver() {
+    const firstHiddenReceiver = document.querySelector(".verkrijger.hidden")
+
+    if (firstHiddenReceiver) {
+        firstHiddenReceiver.classList.remove("hidden");
+    }
+
+    // when there is no more receivers left, add new receivers with js
+    if (!document.querySelector(".verkrijger.hidden")) {
+        addReceiverButton.classList.add("hidden")
+    }
+
+    getRemoveButton()
+    updateReceiverNumbers()
+    
+
+}
+
+
+
+const removeReceiverButton = document.querySelectorAll(".verwijder-verkrijger")
+
+
+function getRemoveButton () {
+    console.log("called")
+    removeReceiverButton.forEach(button => {
+        const firstHiddenReceiver = document.querySelector(".verkrijger.hidden")
+
+        console.log(button, "button")
+        button.addEventListener("click", removeReceiver)
+    
+        function removeReceiver() {
+
+            if (firstHiddenReceiver) {
+                addReceiverButton.classList.remove("hidden")
+            }
+    
+            const currentReceiver = button.closest(".verkrijger")
+    
+            currentReceiver.classList.add("hidden")
+
+            // reset fields after hiding
+            setRequiredAttribute();
+            uncheckInput();
+            updateReceiverNumbers()
+        }
+    })
+
+}
+
+
+// 
+function updateReceiverNumbers() {
+    console.log("called")
+    const receivers = [...document.querySelectorAll(".verkrijger")].filter(receiver => !receiver.classList.contains("hidden"));
+
+    receivers.forEach((receiver, index) => {
+        const legend = receiver.querySelector("legend");
+        legend.textContent = `Verkrijger ${index + 1}`;
+    });
+}
+
+
+
 //check all validation again when pressing the sumbit button and open details with errors
 function openDetails() {
     const allDetails = document.querySelectorAll("details")
@@ -403,14 +574,76 @@ function openDetails() {
     });
 }
 
+
+
+// error overview
+function errorOverview() {
+    // get all displayed errors
+    const allErrors = document.querySelectorAll(".error-message:not(.hidden)")
+    const errorSection = document.querySelector(".error-overview")
+
+    // get all inputs that the errors belong to 
+   allErrors.forEach(error => {
+        // find inputs referencing this error
+        const inputs = document.querySelectorAll(`[aria-errormessage="${error.id}"]`);
+
+
+        // checken of input bestaat
+        if (inputs.length === 0) {
+            console.log("Geen input gevonden voor", error.id);
+        } else {
+            inputs.forEach(input => {
+                if (!input.id) {
+                    // input heeft geen id
+                    console.log("Input heeft geen ID voor error", error.id);
+                } else {
+                    errorSection.classList.remove("hidden")
+                    errorSection.focus();
+                    
+                    const label = document.querySelector(`label[for="${input.id}"]`);
+                    const fieldset = input.closest("fieldset");
+                    const legend = fieldset ? fieldset.querySelector("legend") : null;
+
+                    let errorText = ""
+                    // If both label and legend exist, use both
+                    if (label && legend) {
+                        errorText = `${legend.textContent} - ${label.textContent} - ${error.textContent}`;
+                    } 
+                    // If only label exists, use label
+                    else if (label) {
+                        errorText = `${label.textContent} - ${error.textContent}`;
+                    } 
+                    // If only legend exists, use legend (for radios/checkboxes)
+                    else if (legend) {
+                        errorText = `${legend.textContent} - ${error.textContent}`;
+                    } 
+                    // fallback
+                    else {
+                        errorText = `${input.id} - ${error.textContent}`;
+                    }
+                    
+                    // wat gebeurd er als er een ID voor de error gevonden is
+                    errorLinkHTML = `<li><a href="#${input.id}">${errorText}</a></li>`
+                    
+                    const errorUL = document.querySelector(".error-overview ul")
+                    errorUL.insertAdjacentHTML("beforeend", errorLinkHTML)
+                }
+            });
+        }
+    });
+
+}
+
 const submitButton = document.querySelector("#submit-button")
 submitButton.addEventListener("click", checkValidation)
 
 //add all error messages and open the details with invalid fields on clicking the submit button
 function checkValidation () {
     emptyErrorCheck();
-    elfProef(burgerServiceNummer);
+    burgerServiceNummer.forEach((bsn) => elfProef(bsn));
     radioEmpty();
     openDetails();
     checkMinimumNumberEnd();
+
+    errorOverview()
 }

@@ -20,60 +20,32 @@
         <div>
             <div class="content info-uni">
                 <img src="images/nslogo.png" alt="NS logo">
-                <p>HvA</p>
-                <p>CMD</p>
-                <p>Minor Web Design and Development</p>
+                <a href="https://www.hva.nl/">HvA</a>
+                <a href="https://cmd-amsterdam.nl/">CMD</a>
+                <a href="https://everythingweb.org/">Minor Web Design and Development</a>
             </div>
         </div>
     </header>
-    <!-- patterns voor inputs -->
-    <!-- volgende vraag, scroll als het valid is, scroll snap -->
-    <!-- grijs als je dingen niet nodig hebt -->
-    <!-- stappen laten zien in een aside? met nav? -->
+
     <main>
         <div class="content">
 
-            <!-- moet ik nog aanpassen -->
-            <aside class="hidden">
-                <nav>
-                    <h2>1: Gegevens van de overledene</h2>
-                    <ul>
-                        <li>
-                            <h2><a href="#section1a">Gegevens van de overledene</a></h2>
-                            <ul>
-                                <li><a href="#question-one">Algemene gegevens van de overledene</a></li>
-                            </ul>
-                        </li>
-    
-                        <li>
-                            <h2><a href="#section1b">Huwelijk van de overledene</a></h2>
-                            <ul>
-                                <li><a href="#question-two">Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</a></li>
-                                <li><a href="#question-three">Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partner schapsvoorwaarden laten vastleggen in een notariële akte?</a></li>
-                                <li><a href="#question-four">Hadden de overledene en diens partner een finaal verrekenbeding?</a></li>
-                                <li><a href="#question-five">Datum huwelijkse of partnerschapsvoorwaarden</a></li>
-                            </ul>
-                        </li>
-    
-                        <li>
-                            <h2><a href="#section1c">Kinderen van de overledene</a></h2>
-                            <ul>
-                                <li><a href="#question-six">Had de overledene kinderen?</a></li>
-                                <li><a href="#question-seven">Is 1 van deze kinderen eerder overleden dan de overledene voor wie u nu aangifte doet?</a></li>
-                                <li><a href="#question-eight">Had dit overleden kind zelf kinderen?</a></li>
-                            </ul>
-                        </li>
-    
-                        <li>
-                            <h2><a href="#section1d">Testament en notaris gegevens</a></h2>
-                            <ul>
-                                <li><a href="#question-nine">Had de overledene een testament?</a></li>
-                                <li><a href="#question-ten">Gegevens van de notaris</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
+            <section class="error-overview hidden">
+                <div>
+                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                        <!--?lit$104179900$--><path d="M12.5 8.5c0-.28-.22-.5-.5-.5s-.5.22-.5.5v5.51h1zm-.51 7.51c-.41 0-.75.34-.75.75s.34.75.75.75.75-.34.75-.75-.34-.75-.75-.75"></path><path d="M22.74 17.97h-.01L13.76 2.03C13.4 1.38 12.74 1 12 1s-1.4.39-1.76 1.03L1.26 17.97c-.36.64-.35 1.4.02 2.03s1.02 1 1.74 1h17.95c.72 0 1.38-.38 1.74-1 .37-.63.38-1.39.02-2.03Zm-.88 1.53c-.19.32-.52.51-.88.51H3.02c-.37 0-.69-.19-.88-.51a1.02 1.02 0 0 1 0-1.04L11.1 2.52c.18-.33.52-.52.89-.52s.7.2.89.52l8.97 15.94c.18.33.18.71 0 1.04Z"></path>
+                    </svg>
+                    <h2>U heeft volgende velden nog niet goed ingevoerd:</h2>
+                </div>
+
+                <ul >
+                </ul>
+            </section>
+
+            <section>
+                <h2>Toelichting Formulier</h2>
+                <p>Het formulier hieronder het formulier Aangifte Erfbelasting. Het duurt ongeveer 5 minuten om het in te vullen. </p>
+            </section>
             <form action="" method="post">
                 <h1>Aangifte Erfbelasting</h1>
                 <details open>
@@ -84,35 +56,38 @@
                         <fieldset id="question-one">
                             <label for="initials">Voorletter(s)</label>
                             <div class="input-wrapper">
-                                <input type="text" id="initials" class="uppercase initials" aria-errormessage="err1" aria-invalid="false">
+                                <input type="text" id="initials" class="uppercase initials" aria-errormessage="err1" aria-invalid="false" autocomplete="on" required>
                             </div>
                             <p id="err1" class="error-message hidden" aria-live="polite"></p>
                             
 
                             <label for="infix">Tussenvoegsel(s)</label>
+                            <p id="niet-verplicht-1">(Niet verplicht)</p>
                             <div class="input-wrapper">
-                                <input type="text" id="infix" class="not-required" aria-errormessage="err2" aria-invalid="false">
+                                <input type="text" id="infix" class="not-required" aria-errormessage="err2" aria-invalid="false" autocomplete="on" minlength="0" aria-describedby="niet-verplicht-1">
                             </div>
                             <p class="error-message hidden" aria-live="polite" id="err2"></p>
                             
         
                             <label for="last-name">Achternaam</label>
                             <div class="input-wrapper">
-                                <input type="text" id="last-name" class="capitalize" aria-errormessage="err3" aria-invalid="false">
+                                <input type="text" id="last-name" class="capitalize" aria-errormessage="err3" aria-invalid="false" autocomplete="family-name" required>
                             </div>
                             <p class="error-message hidden" aria-live="polite" id="err3"></p>
                             
         
                             <label for="bsn">BSN overledene</label>
+                            <p id="bsn-explanation">Minimaal 8, maximaal 9 cijfers. Voer alleen cijfers in.</p>
                             <div class="input-wrapper">
-                                <input type="text" inputmode="numeric" id="bsn" class="bsn custom-error" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err4" aria-invalid="false">
+                                <input type="text" inputmode="numeric" id="bsn" class="bsn custom-error" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err4" aria-invalid="false" autocomplete="on" aria-describedby="bsn-explanation" required>
                             </div>
                             <p class="error-message hidden" aria-live="polite" id="err4"></p>
                             
         
                             <label for="death-date">Overlijdensdatum</label>
-                            
-                            <input type="date" id="death-date"  aria-errormessage="err5" aria-invalid="false">
+                            <div class="input-wrapper">
+                                <input type="date" id="death-date"  aria-errormessage="err5" aria-invalid="false">
+                            </div>
                             <p class="error-message hidden" aria-live="polite" id="err5"></p>
                         </fieldset>
                     </fieldset>
@@ -123,7 +98,7 @@
                             <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden?</legend>
                             <div class="radio-wrapper" >
                                 <label for="married-yes">Ja</label>
-                                <input type="radio" id="married-yes" name="married" class="show">
+                                <input type="radio" id="married-yes" name="married" class="show" required>
     
                                 <label for="married-no">Nee</label>
                                 <input type="radio" id="married-no" name="married" class="skip">
@@ -168,7 +143,10 @@
             
                         <div id="question-five" class="question">
                             <label for="marriage-date">Datum huwelijkse of partnerschapsvoorwaarden</label>
-                            <input type="date" max="2026-02-16" id="marriage-date">
+                            <div class="input-wrapper">
+                                <input type="date" max="2026-02-16" id="marriage-date" aria-errormessage="err46" aria-invalid="false">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err46"></p>
                         </div>
                     </fieldset>
         
@@ -179,7 +157,7 @@
                             <legend>Had de overledene kinderen?</legend>
                             <div class="radio-wrapper">
                                 <label for="children-yes">Ja</label>
-                                <input type="radio" name="children" id="children-yes" class="show">
+                                <input type="radio" name="children" id="children-yes" class="show" required>
     
                                 <label for="children-nee">Nee</label>
                                 <input type="radio" name="children" id="children-nee" class="skip">
@@ -217,12 +195,11 @@
             
                     <fieldset id="section-one-d">
                         <legend><span>1d</span> Testament en notaris gegevens</legend>
-                        <fieldset id="question-nine" class="question skip-questions" aria-errormessage="err5
-                        12" aria-invalid="false">
+                        <fieldset id="question-nine" class="question skip-questions" aria-errormessage="err12" aria-invalid="false">
                             <legend>Had de overledene een testament?</legend>
                             <div class="radio-wrapper">
                                 <label for="will-yes">Ja</label>
-                                <input type="radio" name="will" id="will-yes" class="show">
+                                <input type="radio" name="will" id="will-yes" class="show" required>
     
                                 <label for="will-no">Nee</label>
                                 <input type="radio" name="will" id="will-no" class="skip">
@@ -233,21 +210,43 @@
         
                         <fieldset id="question-ten" class="question">
                             <legend>Vul de gegevens in van de notaris die het testament heeft opgemaakt en de datum van het testament.</legend>
+
                             <label for="protocol-notary">Protocolnummer notaris</label>
-                            <input type="number" name="protocol-notary" id="protocol-notary">
-            
+                            <div class="input-wrapper">
+                                <input type="number" name="protocol-notary" id="protocol-notary" aria-errormessage="err40" aria-invalid="false">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err40"></p>
+                            
                             <label for="initials-notary">Voorletter(s)</label>
-                            <input type="text" id="initials-notary" class="uppercase initials">
+                            <div class="input-wrapper"> 
+                                <input type="text" id="initials-notary" class="uppercase initials" aria-errormessage="err41" aria-invalid="false">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err41"></p>
+
                             <label for="inifx-notary">Tussenvoegsel(s)</label>
-                            <input type="text" id="inifx-notary" class="not-required">
+                            <p id="niet-verplicht-2">(Niet verplicht)</p>
+                            <div class="input-wrapper"> 
+                                <input type="text" id="inifx-notary" class="not-required" aria-errormessage="err42" aria-invalid="false" aria-describedby="niet-verplicht-2">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err42"></p>
+
                             <label for="last-name-notary">Achternaam</label>
-                            <input type="text" id="last-name-notary" class="capitalize">
+                            <div class="input-wrapper"> 
+                                <input type="text" id="last-name-notary" class="capitalize" aria-errormessage="err43" aria-invalid="false">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err43"></p>
             
                             <label for="location-notary">Vestigingsplaats</label>
-                            <input type="text" id="location-notary" class="capitalize">
+                            <div class="input-wrapper"> 
+                                <input type="text" id="location-notary" class="capitalize" aria-errormessage="err44" aria-invalid="false">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err44"></p>
             
                             <label for="date-will">Datum van het testament of van de laatste wijziging</label>
-                            <input type="date" max="2026-02-16" id="date-will">
+                            <div class="input-wrapper"> 
+                                <input type="date" max="2026-02-16" id="date-will" aria-errormessage="err45" aria-invalid="false">
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err45"></p>
                         </fieldset>
                     </fieldset>
                 </details>
@@ -258,7 +257,7 @@
                         <legend><span>3a</span> Heeft de overledene in het testament een executeur aangewezen om de erfenis af te handelen? Dan moet de executeur aangifte doen voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). Is er geen executeur aangewezen? Kruis dan aan welke situatie voor u geldt.</legend>
     
                         <div class="input-container">
-                            <input type="radio" id="executor" name="executor" class="show"  checked/>
+                            <input type="radio" id="executor" name="executor" class="show" required  checked/>
                             <label for="executor">Ik ben executeur en doe aangifte voor alle personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers). <span>Geef aan voor hoeveel verkrijgers u aangifte doet. Bent u zelf ook verkrijger? Tel uzelf dan ook mee.</span></label>
                         </div>
     
@@ -285,16 +284,314 @@
     
                     <div id="receiver-input-group">
                         <label for="number-receivers" id="receiver-label">Geef aan voor hoeveel verkrijgers u aangifte doet.</label>
-                        <input type="number" id="number-receivers" min="0" aria-errormessage="err13" aria-invalid="false" class="custom-error">
+                        <input type="number" id="number-receivers" min="0" aria-errormessage="err13" aria-invalid="false" class="custom-error" required>
                         <p class="error-message hidden" aria-live="polite" id="err13"></p>
                     </div>
     
                     <fieldset id="section-three-b" class="question">
-                        <legend><span>3b</span></legend>
+                        <legend><span>3b</span>Voor wie doet u geen aangifte?</legend>
+                        <fieldset class="skip-questions" aria-errormessage="err14" aria-invalid="false">
+                            <legend>
+                                Zijn er verkrijgers voor wie u <em>geen</em> aangifte doet?
+                            </legend>
+                            <div class="radio-wrapper">
+                                
+                                <input type="radio" id="geen-verkrijgers-ja" name="geen-verkijgers" class="show" required/>
+                                <label for="geen-verkrijgers-ja">Ja</label>
+                            
+                                <input type="radio" id="geen-verkrijgers-nee" name="geen-verkijgers" class="skip"/>
+                                <label for="geen-verkrijgers-nee">Nee</label>
+                                
+                            </div>
+                            <p class="error-message hidden" aria-live="polite" id="err14"></p>
+                            
+                        </fieldset>
+                        <fieldset class="question">
+                            <legend>Verkrijgers</legend>
+                            <fieldset class="verkrijger">
+                                <legend>Verkrijger 1</legend>
+
+
+                                <label for="bsn-1">BSN/RSIN</label>
+                                <p id="bsn-explanation-1">Minimaal 8, maximaal 9 cijfers. Voer alleen cijfers in.</p>
+                                <div class="input-wrapper">
+                                    <input type="text" inputmode="numeric" id="bsn-1" class="bsn custom-error" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err15" aria-invalid="false" aria-describedby="bsn-explanation-1">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err15"></p>
+
+
+                                <label for="initials-verkrijger">Voorletter(s)</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="initials-verkrijger" class="uppercase initials" aria-errormessage="err16" aria-invalid="false">
+                                </div>
+                                <p id="err16" class="error-message hidden" aria-live="polite"></p>
+                                
+
+                                <label for="infix-verkrijger">Tussenvoegsel(s)</label>
+                                <p id="niet-verplicht-3">(Niet verplicht)</p>
+                                <div class="input-wrapper">
+                                    <input type="text" id="infix-verkrijger" class="not-required" aria-errormessage="err17" aria-invalid="false" aria-describedby="niet-verplicht-3">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err17"></p>
+                                
+            
+                                <label for="last-name-verkrijger">Achternaam</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="last-name-verkrijger" class="capitalize" aria-errormessage="err18" aria-invalid="false">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err18"></p>
+
+                                <fieldset id="hele-vermogen-fieldset-1" aria-errormessage="err19" aria-invalid="false">
+                                    <legend>
+                                        Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?
+                                    </legend>
+                                    <div class="radio-wrapper">
+                                        
+                                        <input type="radio" id="hele-vermogen-ja" name="hele-vermogen"/>
+                                        <label for="hele-vermogen-ja">Ja</label>
+                                    
+                                        <input type="radio" id="hele-vermogen-nee" name="hele-vermogen"/>
+                                        <label for="hele-vermogen-nee">Nee</label>
+                                        
+                                    </div>
+                                    <p class="error-message hidden" aria-live="polite" id="err19"></p>
+                                </fieldset>
+
+                                <fieldset id="legitieme-portie-fieldset-1" aria-errormessage="err20" aria-invalid="false">
+                                    <legend>
+                                        Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?
+                                    </legend>
+                                    <div class="radio-wrapper">
+                                        
+                                        <input type="radio" id="legitieme-portie-ja" name="legitieme-portie"/>
+                                        <label for="legitieme-portie-ja">Ja</label>
+                                    
+                                        <input type="radio" id="legitieme-portie-nee" name="legitieme-portie"/>
+                                        <label for="legitieme-portie-nee">Nee</label>
+                                        
+                                    </div>
+                                    <p class="error-message hidden" aria-live="polite" id="err20"></p>
+                                </fieldset>
+
+                                
+                            </fieldset>
+                            <fieldset class="verkrijger">
+                                <legend>Verkrijger 2</legend>
+                                <button class="verwijder-verkrijger" type="button"><span>Verwijder Verkrijger</span></button>
+
+
+                                <label for="bsn-2">BSN/RSIN</label>
+                                <p id="bsn-explanation-2">Minimaal 8, maximaal 9 cijfers. Voer alleen cijfers in.</p>
+                                <div class="input-wrapper">
+                                    <input type="text" inputmode="numeric" id="bsn-2" class="bsn custom-error" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err21" aria-invalid="false" aria-describedby="bsn-explanation-2">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err21"></p>
+
+
+                                <label for="initials-verkrijger-2">Voorletter(s)</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="initials-verkrijger-2" class="uppercase initials" aria-errormessage="err22" aria-invalid="false">
+                                </div>
+                                <p id="err22" class="error-message hidden" aria-live="polite"></p>
+                                
+
+                                <label for="infix-verkrijger-2">Tussenvoegsel(s)</label>
+                                <p id="niet-verplicht-4">(Niet verplicht)</p>
+                                <div class="input-wrapper">
+                                    <input type="text" id="infix-verkrijger-2" class="not-required" aria-errormessage="err23" aria-invalid="false" aria-describedby="niet-verplicht-4">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err23"></p>
+                                
+            
+                                <label for="last-name-verkrijger-2">Achternaam</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="last-name-verkrijger-2" class="capitalize" aria-errormessage="err24" aria-invalid="false">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err24"></p>
+
+                                <fieldset id="hele-vermogen-fieldset-2" aria-errormessage="err25" aria-invalid="false">
+                                    <legend>
+                                        Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?
+                                    </legend>
+                                    <div class="radio-wrapper">
+                                        
+                                        <input type="radio" id="hele-vermogen-ja-2" name="hele-vermogen-2"/>
+                                        <label for="hele-vermogen-ja-2">Ja</label>
+                                    
+                                        <input type="radio" id="hele-vermogen-nee-2" name="hele-vermogen-2"/>
+                                        <label for="hele-vermogen-nee-2">Nee</label>
+                                        
+                                    </div>
+                                    <p class="error-message hidden" aria-live="polite" id="err25"></p>
+                                </fieldset>
+
+                                <fieldset id="legitieme-portie-fieldset-2"  aria-errormessage="err26" aria-invalid="false">
+                                    <legend>
+                                        Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?
+                                    </legend>
+                                    <div class="radio-wrapper">
+                                        
+                                        <input type="radio" id="legitieme-portie-ja-2" name="legitieme-portie-2"/>
+                                        <label for="legitieme-portie-ja-2">Ja</label>
+                                    
+                                        <input type="radio" id="legitieme-portie-nee-2" name="legitieme-portie-2"/>
+                                        <label for="legitieme-portie-nee-2">Nee</label>
+                                        
+                                    </div>
+                                    <p class="error-message hidden" aria-live="polite" id="err26"></p>
+                                </fieldset>
+                            </fieldset>
+
+                            <fieldset class="verkrijger">
+                                <legend>Verkrijger 3</legend>
+                                <button class="verwijder-verkrijger" type="button"><span>Verwijder Verkrijger</span></button>
+
+
+                                <label for="bsn-3">BSN/RSIN</label>
+                                <p id="bsn-explanation-3">Minimaal 8, maximaal 9 cijfers. Voer alleen cijfers in.</p>
+                                <div class="input-wrapper">
+                                    <input type="text" inputmode="numeric" id="bsn-3" class="bsn custom-error" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err27" aria-invalid="false" aria-describedby="bsn-explanation-3">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err27"></p>
+
+
+                                <label for="initials-verkrijger-3">Voorletter(s)</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="initials-verkrijger-3" class="uppercase initials" aria-errormessage="err28" aria-invalid="false">
+                                </div>
+                                <p id="err28" class="error-message hidden" aria-live="polite"></p>
+                                
+
+                                <label for="infix-verkrijger-3">Tussenvoegsel(s)</label>
+                                <p id="niet-verplicht-5">(Niet verplicht)</p>
+                                <div class="input-wrapper">
+                                    <input type="text" id="infix-verkrijger-3" class="not-required" aria-errormessage="err29" aria-invalid="false" aria-describedby="niet-verplicht-5">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err29"></p>
+                                
+            
+                                <label for="last-name-verkrijger-3">Achternaam</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="last-name-verkrijger-3" class="capitalize" aria-errormessage="err30" aria-invalid="false">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err30"></p>
+
+                                <fieldset aria-errormessage="err31" aria-invalid="false" id="hele-vermogen-fieldset-3">
+                                    <legend>
+                                        Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?
+                                    </legend>
+                                    <div class="radio-wrapper">
+                                        
+                                        <input type="radio" id="hele-vermogen-ja-3" name="hele-vermogen-3"/>
+                                        <label for="hele-vermogen-ja-3">Ja</label>
+                                    
+                                        <input type="radio" id="hele-vermogen-nee-3" name="hele-vermogen-3"/>
+                                        <label for="hele-vermogen-nee-3">Nee</label>
+                                        
+                                    </div>
+                                    <p class="error-message hidden" aria-live="polite" id="err31"></p>
+                                </fieldset>
+
+                                <fieldset id="legitieme-portie-fieldset-3"  aria-errormessage="err32" aria-invalid="false">
+                                    <legend>
+                                        Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?
+                                    </legend>
+                                    <div class="radio-wrapper">
+                                        
+                                        <input type="radio" id="legitieme-portie-ja-3" name="legitieme-portie-3"/>
+                                        <label for="legitieme-portie-ja-3">Ja</label>
+                                    
+                                        <input type="radio" id="legitieme-portie-nee-3" name="legitieme-portie-3"/>
+                                        <label for="legitieme-portie-nee-3">Nee</label>
+                                        
+                                    </div>
+                                    <p class="error-message hidden" aria-live="polite" id="err32"></p>
+                                </fieldset>
+
+                            </fieldset>
+                            <fieldset class="verkrijger">
+                                <legend>Verkrijger 4</legend>
+                                <button class="verwijder-verkrijger" type="button"><span>Verwijder Verkrijger</span></button>
+
+
+                                <label for="bsn-4">BSN/RSIN</label>
+                                <p id="bsn-explanation-4">Minimaal 8, maximaal 9 cijfers. Voer alleen cijfers in.</p>
+                                <div class="input-wrapper">
+                                    <input type="text" inputmode="numeric" id="bsn-4" class="bsn custom-error" minlength="8" maxlength="9" pattern="\d{8,9}" aria-errormessage="err34" aria-invalid="false" aria-describedby="bsn-explanation-4">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err34"></p>
+
+
+                                <label for="initials-verkrijger-4">Voorletter(s)</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="initials-verkrijger-4" class="uppercase initials" aria-errormessage="err35" aria-invalid="false">
+                                </div>
+                                <p id="err35" class="error-message hidden" aria-live="polite"></p>
+                                
+
+                                <label for="infix-verkrijger-4">Tussenvoegsel(s)</label>
+                                <p id="niet-verplicht-6">(Niet verplicht)</p>
+                                <div class="input-wrapper">
+                                    <input type="text" id="infix-verkrijger-4" class="not-required" aria-errormessage="err36" aria-invalid="false" aria-describedby="niet-verplicht-6">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err36"></p>
+                                
+            
+                                <label for="last-name-verkrijger-4">Achternaam</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="last-name-verkrijger-4" class="capitalize" aria-errormessage="err37" aria-invalid="false">
+                                </div>
+                                <p class="error-message hidden" aria-live="polite" id="err37"></p>
+
+                                <fieldset id="hele-vermogen-fieldset-4" aria-errormessage="err38" aria-invalid="false">
+                                    <legend>
+                                        Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?
+                                    </legend>
+                                    <div class="radio-wrapper">
+                                        
+                                        <input type="radio" id="hele-vermogen-ja-4" name="hele-vermogen-4"/>
+                                        <label for="hele-vermogen-ja-4">Ja</label>
+                                    
+                                        <input type="radio" id="hele-vermogen-nee-4" name="hele-vermogen-4"/>
+                                        <label for="hele-vermogen-nee-4">Nee</label>
+                                        
+                                    </div>
+                                    <p class="error-message hidden" aria-live="polite" id="err38"></p>
+                                </fieldset>
+
+                                <fieldset id="legitieme-portie-fieldset-4" aria-errormessage="err39" aria-invalid="false">
+                                    <legend>
+                                        Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?
+                                    </legend>
+                                    <div class="radio-wrapper">
+                                        
+                                        <input type="radio" id="legitieme-portie-ja-4" name="legitieme-portie-4"/>
+                                        <label for="legitieme-portie-ja-4">Ja</label>
+                                    
+                                        <input type="radio" id="legitieme-portie-nee-4" name="legitieme-portie-4"/>
+                                        <label for="legitieme-portie-nee-4">Nee</label>
+                                        
+                                    </div>
+                                    <p class="error-message hidden" aria-live="polite" id="err39"></p>
+                                </fieldset>
+                            </fieldset>
+                            <button type="button" class="verkrijger-toevoegen hidden"><span>Verkrijger toevoegen</span></button>
+                        </fieldset>
+
                     </fieldset>
     
-                    <fieldset id="section-three-c">
-                        <legend><span>3c</span></legend>
+                    <fieldset id="section-three-c" aria-errormessage="err33" aria-invalid="false">
+                        <legend><span>3c</span>Naar wie wilt u dat wij de aanslag erfbelasting sturen?</legend>
+                        <div class="radio-wrapper">
+                                        
+                            <input type="radio" id="iedere-verkrijger-ja" name="aanslag-erfbelasting" required/>
+                            <label for="iedere-verkrijger-ja">Stuur naar iedere verkrijger van (een deel van) de erfenis een eigen belastingaanslag.</label>
+                        
+                            <input type="radio" id="iedere-verkrijger-nee" name="aanslag-erfbelasting"/>
+                            <label for="iedere-verkrijger-nee">Stuur de belastingaanslag(en) naar de executeur of naar de erfgenaam die ook namens andere personen en/of instellingen die iets krijgen uit de nalatenschap (verkrijgers) aangifte heeft gedaan; dit mag ook de gemachtigde zijn. Wij sturen de aanslag(en) naar het adres dat u bij vraag 2 hebt ingevuld.</label>
+                            
+                        </div>
+                        <p class="error-message hidden" aria-live="polite" id="err33"></p>
                     </fieldset>
                 </details>
     
