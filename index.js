@@ -148,6 +148,8 @@ burgerServiceNummer.forEach((bsn) => {
 
 // check BSN
 function elfProef (input) {
+    if (input.offsetParent === null) return;
+
     // const input = event.target;
     let bsnValue = input.value.trim();
     let bsnValueSplit = bsnValue.split("");
@@ -321,6 +323,12 @@ function emptyError(input) {
     const errorId = input.getAttribute("aria-errormessage");
     const errorMessage = errorId ? document.getElementById(errorId) : null;
     console.log(errorMessage, "errorMessage")
+
+    // skip validation if the input is inside a hidden receiver
+    const receiver = input.closest(".verkrijger");
+    if (receiver && receiver.classList.contains("hidden")) {
+        return;
+    }
     
     
 
@@ -491,6 +499,8 @@ const addReceiverButton = document.querySelector(".verkrijger-toevoegen")
 
 invisibleReceiver.forEach(receiver => {
     receiver.classList.add("hidden")
+
+    setRequiredAttribute();
 })
 
 addReceiverButton.classList.remove("hidden")
@@ -502,6 +512,7 @@ function addReceiver() {
 
     if (firstHiddenReceiver) {
         firstHiddenReceiver.classList.remove("hidden");
+        makeInputsRequired(firstHiddenReceiver); 
     }
 
     // when there is no more receivers left, add new receivers with js
@@ -511,8 +522,18 @@ function addReceiver() {
 
     getRemoveButton()
     updateReceiverNumbers()
+    setRequiredAttribute();
+    
     
 
+}
+
+function makeInputsRequired(receiver) {
+    const inputs = receiver.querySelectorAll("input:not(.not-required)");
+
+    inputs.forEach(input => {
+        input.setAttribute("required", "");
+    });
 }
 
 
@@ -520,31 +541,48 @@ function addReceiver() {
 const removeReceiverButton = document.querySelectorAll(".verwijder-verkrijger")
 
 
-function getRemoveButton () {
-    console.log("called")
-    removeReceiverButton.forEach(button => {
-        const firstHiddenReceiver = document.querySelector(".verkrijger.hidden")
+removeReceiverButton.forEach(button => {
+    button.addEventListener("click", removeReceiver);
+});
 
-        console.log(button, "button")
-        button.addEventListener("click", removeReceiver)
+
     
-        function removeReceiver() {
+function removeReceiver(event) {
+     const button = event.currentTarget; // the clicked button
+    const currentReceiver = button.closest(".verkrijger");
 
-            if (firstHiddenReceiver) {
-                addReceiverButton.classList.remove("hidden")
-            }
-    
-            const currentReceiver = button.closest(".verkrijger")
-    
-            currentReceiver.classList.add("hidden")
+    const firstHiddenReceiver = document.querySelector(".verkrijger.hidden");
 
-            // reset fields after hiding
-            setRequiredAttribute();
-            uncheckInput();
-            updateReceiverNumbers()
-        }
-    })
+    if (firstHiddenReceiver) {
+        addReceiverButton.classList.remove("hidden");
+    }
 
+    currentReceiver.classList.add("hidden");
+
+    // reset fields after hiding
+    setRequiredAttribute();
+    uncheckInput();
+    updateReceiverNumbers();
+    resetReceiver(currentReceiver);
+}
+
+
+
+function resetReceiver(receiver) {
+
+    const inputs = receiver.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.value = "";
+        input.checked = false;
+
+        input.setCustomValidity("");
+        input.setAttribute("aria-invalid", "false");
+
+        input.classList.remove("invalid");
+        input.classList.remove("valid");
+        input.removeAttribute("required")
+    });
 }
 
 
@@ -584,6 +622,11 @@ function errorOverview() {
 
     // get all inputs that the errors belong to 
    allErrors.forEach(error => {
+        // skip errors inside hidden receivers
+        const receiver = error.closest(".verkrijger");
+        if (receiver && receiver.classList.contains("hidden")) {
+            return;
+        }
         // find inputs referencing this error
         const inputs = document.querySelectorAll(`[aria-errormessage="${error.id}"]`);
 
