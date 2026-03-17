@@ -211,185 +211,6 @@
 
 
 
-    /*******************/
-    /* COLORS DARKMODE */
-    /*******************/
-
-    /***************/
-    /* text colors */
-    /***************/
-
-    /* for primary text and icons */
-    --darkmode-content-default: #C4C5CB;
-    /* content on high contrast backgrounds */
-    --darkmode-content-default-inverse: #252528;
-    /* for headings and more emphasis */
-    --darkmode-content-emphasis: #E4E5E8;
-    /* for secondary content like help text */
-    --darkmode-content-subtle: #979798;
-    /* for placeholder content */
-    --darkmode-content-placeholder: #757677;
-    /* links and secondary buttons */
-    --darkmode-content-interactive-default: #5D9FEA;
-    /* links and secondary buttons on high contrast background */
-    --darkmode-content-interactive-default-inverse: #0C44A1;
-    /* hover state for interactive elements */
-    --darkmode-content-interactive-hover: #9AC4F1;
-    /* pressed/active state for interactive elements */
-    --darkmode-content-interactive-pressed: #C4DBF7;
-    /* selected state for tabs and menu items in navigation */
-    --darkmode-content-selected: #FFFFFF;
-    /* informative content, like inline messages */
-    --darkmode-content-info: #5D9FEA;
-    /* content that reflects a positive outcome, messages inline */
-    --darkmode-content-success: #4FCDA6;
-    /* a warning, like a message inline */
-    --darkmode-content-warning: #FF9544;
-    /* an error, or a critical communication */
-    --darkmode-content-error: #FF9495;
-    /* an error on high contrast background */
-    --darkmode-content-error-inverse: #B30424;
-    /* for content that reflects critical information or actions, like destructive buttons and list items */
-    --darkmode-content-destructive-default: #FF9495;
-    /* hover state for color.content.destructive */
-    --darkmode-content-destructive-hover: #FFBDBE;
-    /* pressed/active state for color.content.destructive */
-    --darkmode-content-destructive-pressed: #FADCDC;
-    /* color for content on subtle color.accent backgrounds */
-    --darkmode-content-on-accent-subtle: #FFFFFF;
-    /* for logo */
-    --darkmode-content-logo: #FED651;
-
-    /**************/
-    /* MARK: Background 
-    /**************/
-
-    /* default background */
-    --darkmode-background-default: #0D0E10;
-    /* backgrounds with high contrast, like tooltips */
-    --darkmode-background-default-inverse: #D6D7DD;
-    /* use as alternative background tint */
-    --darkmode-background-emphasis-primary: #1E2C42;
-    --darkmode-background-emphasis-secondary: #333438;
-    /* brand colors */
-    --darkmode-background-brand-primary: #252528;
-    --darkmode-background-brand-secondary: #9AC4F1;
-    /* hover state */
-    --darkmode-background-hover: #202123;
-    --darkmode-background-hover-inverse: #0C0E12;
-    /* pressed state */
-    --darkmode-background-pressed: #343536;
-    --darkmode-background-pressed-inverse: #0D0E13;
-    /* selected states, chips, table rows, menu items */
-    --darkmode-background-selected-default: #343536;
-    --darkmode-background-selected-hover: #454647;
-    --darkmode-background-selected-pressed: #5B5B5D;
-    /* background for selected states with extra emphasis, like filter chips */
-    --darkmode-background-selected-emphasis-default: #5D9FEA;
-    --darkmode-background-selected-emphasis-hover: #9AC4F1;
-    --darkmode-background-selected-emphasis-pressed: #C4DBF7;
-    /* background buttons and interactive elements */
-    --darkmode-background-interactive-default: #5D9FEA;
-    --darkmode-background-interactive-default-inverse: #1B3460;
-    --darkmode-background-interactive-hover: #9AC4F1;
-    --darkmode-background-interactive-hover-inverse: #0B368;
-    --darkmode-background-interactive-pressed: #C4DBF7;
-    --darkmode-background-interactive-pressed-inverse: #0C44A1;
-    /* FORM ELEMENTS, checkboxes, inputs, radio-buttons */
-    --darkmode-background-input: #000000;
-    /* more notable backgrounds which should be compatible with multiple backgrounds, like toggles */
-    --darkmode-background-alpha-default: #5B5B5D;
-    --darkmode-background-alpha-hover: #5B5B5D;
-    --darkmode-background-alpha-pressed: #5B5B5D;
-    /* for subtle backgrounds that have to be compatible with multiple backgrounds, like skeletons */
-    --darkmode-background-alpha-subtle: #28282A;
-    /* overlay behind dialogs */
-    --darkmode-background-overlay: #06070E;
-    /* for more notable informative backgrounds, like a message bar */
-    --darkmode-background-overlay-default: #5D9FEA;
-    --darkmode-background-overlay-hover: #9AC4F1;
-    --darkmode-background-overlay-pressed: #C4DBF7;
-    /* for subtle informative backgrounds, like a message inline */
-    --darkmode-background-overlay-subtle: #28282A;
-    /* backgrounds that reflect a positiv outcome, like a message bar */
-    --darkmode-background-success-default: #4FCDA6;
-    --darkmode-background-success-hover: #9AE0C4;
-    --darkmode-background-success-pressed: #B9F4DB;
-    /* inline message */
-    --darkmode-background-success-subtle: #28282A;
-    /* background warning */
-    --darkmode-background-warning-default: #FF9544;
-    --darkmode-background-warning-hover: #FFBB7A;
-    --darkmode-background-warning-pressed: #F7D7B1;
-    --darkmode-background-warning-subtle: #28282A;
-    /* background error */
-    --darkmode-background-error-default: #FF9495;
-    --darkmode-background-error-hover: #FFBDBE;
-    --darkmode-background-error-pressed: #FADCDC;
-    --darkmode-background-error-subtle: #28282A;
-    /* backgrounds that reflect critical information or actions, like destructive primary buttons */
-    --darkmode-background-destructive-default: #FF9495;
-    --darkmode-background-destructive-hover: #FFBDBE;
-    --darkmode-background-destructive-pressed: #FADCDC;
-    /* backgrounds that have no meaning attached to the color, like tags */
-    --darkmode-background-accent-gray-default: #979798;
-    --darkmode-background-accent-gray-subtle: #343536;
-    --darkmode-background-accent-blue-default: #5D9FEA;
-    --darkmode-background-accent-blue-subtle: #1B3460;
-    --darkmode-background-accent-orange-default: #FF9544;
-    --darkmode-background-accent-orange-subtle: #6A3718;
-    --darkmode-background-accent-green-default: #47BD99;
-    --darkmode-background-accent-green-subtle: #244C40;
-    --darkmode-background-accent-red-default: #EF6666;
-    --darkmode-background-accent-red-subtle: #9A031E;
-    --darkmode-background-accent-yellow-default: #FED651;
-    --darkmode-background-accent-yellow-subtle: #8C7321;
-    --darkmode-background-accent-purple-default: #A780EF;
-    --darkmode-background-accent-purple-subtle: #472F6F;
-    --darkmode-background-accent-pink-default: #EA66AA;
-    --darkmode-background-accent-pink-subtle: #84244B;
-
-
-
-    /***********/
-    /* Border */
-    /***********/
-
-
-    --darkmode-border-default: #343536;
-    /* high contrast backgrounds */
-    --darkmode-border-default-inverse: #0D0E13;
-    /* borders that need more subtlety */
-    --darkmode-border-subtle: #28282A;
-    --darkmode-border-emphasis: #5B5B5D;
-    /* interactive borders, like secondary buttons */
-    --darkmode-border-interactive-default: #5D9FEA;
-    --darkmode-border-interactive-default-inverse: #0C44A1;
-    --darkmode-border-interactive-hover: #9AC4F1;
-    --darkmode-border-interactive-pressed: #C4DBF7;
-    /* FORMS, inputs, checkboxes, radio buttons */
-    --darkmode-border-input-default: #757677;
-    --darkmode-border-input-hover: #979798;
-    /* informative borders, like a message inline */
-    --darkmode-border-info: #5D9FEA;
-    /* success */
-    --darkmode-border-success: #4FCDA6;
-    /* warning */
-    --darkmode-border-warning: #FF9544;
-    /* error */
-    --darkmode-border-error: #FF9495;
-    /* destructive */
-    --darkmode-border-destructive-default: #FF9495;
-    --darkmode-border-destructive-hover: #FFBDBE;
-    --darkmode-border-destructive-pressed: #FADCDC;
-    /* logo */
-    --darkmode-border-logo: #343536;
-    /* selected state, like tabs, menu item, navigation bar */
-    --darkmode-border-selected-default: #FED651;
-    /* a selected state that needs extra emphasis */
-    --darkmode-border-selected-emphasis: #FED651;
-    /* the outline in focus states */
-    --darkmode-border-focus: #5D9FEA;
 
 
 
@@ -410,6 +231,10 @@
     --breakpoint-s: 768px;
     --breakpoint-m: 1024px;
     --breakpoint-l: 1200px;
+
+
+    --input-height: 4.5em;
+    --input-width: clamp(20em, 40vw, 35em);
 }
 
 /* if breakpoint L or bigger */
@@ -419,6 +244,193 @@
 
     }
 }
+
+/* ****** */
+/* Darkmode
+/* ****** */
+html:has(#darkmode-slider:checked) {
+
+    /*******************/
+    /* COLORS DARKMODE */
+    /*******************/
+
+    /***************/
+    /* text colors */
+    /***************/
+
+    /* for primary text and icons */
+    --color-content-default: #C4C5CB;
+    /* content on high contrast backgrounds */
+    --color-content-default-inverse: #252528;
+    /* for headings and more emphasis */
+    --color-content-emphasis: #E4E5E8;
+    /* for secondary content like help text */
+    --color-content-subtle: #979798;
+    /* for placeholder content */
+    --color-content-placeholder: #757677;
+    /* links and secondary buttons */
+    --color-content-interactive-default: #5D9FEA;
+    /* links and secondary buttons on high contrast background */
+    --color-content-interactive-default-inverse: #0C44A1;
+    /* hover state for interactive elements */
+    --color-content-interactive-hover: #9AC4F1;
+    /* pressed/active state for interactive elements */
+    --color-content-interactive-pressed: #C4DBF7;
+    /* selected state for tabs and menu items in navigation */
+    --color-content-selected: #FFFFFF;
+    /* informative content, like inline messages */
+    --color-content-info: #5D9FEA;
+    /* content that reflects a positive outcome, messages inline */
+    --color-content-success: #4FCDA6;
+    /* a warning, like a message inline */
+    --color-content-warning: #FF9544;
+    /* an error, or a critical communication */
+    --color-content-error: #FF9495;
+    /* an error on high contrast background */
+    --color-content-error-inverse: #B30424;
+    /* for content that reflects critical information or actions, like destructive buttons and list items */
+    --color-content-destructive-default: #FF9495;
+    /* hover state for color.content.destructive */
+    --color-content-destructive-hover: #FFBDBE;
+    /* pressed/active state for color.content.destructive */
+    --color-content-destructive-pressed: #FADCDC;
+    /* color for content on subtle color.accent backgrounds */
+    --color-content-on-accent-subtle: #FFFFFF;
+    /* for logo */
+    --color-content-logo: #FED651;
+
+    /**************/
+    /* MARK: Background 
+    /**************/
+
+    /* default background */
+    --color-background-default: #0D0E10;
+    /* backgrounds with high contrast, like tooltips */
+    --color-background-default-inverse: #D6D7DD;
+    /* use as alternative background tint */
+    --color-background-emphasis-primary: #1E2C42;
+    --color-background-emphasis-secondary: #333438;
+    /* brand colors */
+    --color-background-brand-primary: #252528;
+    --color-background-brand-secondary: #9AC4F1;
+    /* hover state */
+    --color-background-hover: #202123;
+    --color-background-hover-inverse: #0C0E12;
+    /* pressed state */
+    --color-background-pressed: #343536;
+    --color-background-pressed-inverse: #0D0E13;
+    /* selected states, chips, table rows, menu items */
+    --color-background-selected-default: #343536;
+    --color-background-selected-hover: #454647;
+    --color-background-selected-pressed: #5B5B5D;
+    /* background for selected states with extra emphasis, like filter chips */
+    --color-background-selected-emphasis-default: #5D9FEA;
+    --color-background-selected-emphasis-hover: #9AC4F1;
+    --color-background-selected-emphasis-pressed: #C4DBF7;
+    /* background buttons and interactive elements */
+    --color-background-interactive-default: #5D9FEA;
+    --color-background-interactive-default-inverse: #1B3460;
+    --color-background-interactive-hover: #9AC4F1;
+    --color-background-interactive-hover-inverse: #0B368;
+    --color-background-interactive-pressed: #C4DBF7;
+    --color-background-interactive-pressed-inverse: #0C44A1;
+    /* FORM ELEMENTS, checkboxes, inputs, radio-buttons */
+    --color-background-input: #000000;
+    /* more notable backgrounds which should be compatible with multiple backgrounds, like toggles */
+    --color-background-alpha-default: #5B5B5D;
+    --color-background-alpha-hover: #5B5B5D;
+    --color-background-alpha-pressed: #5B5B5D;
+    /* for subtle backgrounds that have to be compatible with multiple backgrounds, like skeletons */
+    --color-background-alpha-subtle: #28282A;
+    /* overlay behind dialogs */
+    --color-background-overlay: #06070E;
+    /* for more notable informative backgrounds, like a message bar */
+    --color-background-overlay-default: #5D9FEA;
+    --color-background-overlay-hover: #9AC4F1;
+    --color-background-overlay-pressed: #C4DBF7;
+    /* for subtle informative backgrounds, like a message inline */
+    --color-background-overlay-subtle: #28282A;
+    /* backgrounds that reflect a positiv outcome, like a message bar */
+    --color-background-success-default: #4FCDA6;
+    --color-background-success-hover: #9AE0C4;
+    --color-background-success-pressed: #B9F4DB;
+    /* inline message */
+    --color-background-success-subtle: #28282A;
+    /* background warning */
+    --color-background-warning-default: #FF9544;
+    --color-background-warning-hover: #FFBB7A;
+    --color-background-warning-pressed: #F7D7B1;
+    --color-background-warning-subtle: #28282A;
+    /* background error */
+    --color-background-error-default: #FF9495;
+    --color-background-error-hover: #FFBDBE;
+    --color-background-error-pressed: #FADCDC;
+    --color-background-error-subtle: #28282A;
+    /* backgrounds that reflect critical information or actions, like destructive primary buttons */
+    --color-background-destructive-default: #FF9495;
+    --color-background-destructive-hover: #FFBDBE;
+    --color-background-destructive-pressed: #FADCDC;
+    /* backgrounds that have no meaning attached to the color, like tags */
+    --color-background-accent-gray-default: #979798;
+    --color-background-accent-gray-subtle: #343536;
+    --color-background-accent-blue-default: #5D9FEA;
+    --color-background-accent-blue-subtle: #1B3460;
+    --color-background-accent-orange-default: #FF9544;
+    --color-background-accent-orange-subtle: #6A3718;
+    --color-background-accent-green-default: #47BD99;
+    --color-background-accent-green-subtle: #244C40;
+    --color-background-accent-red-default: #EF6666;
+    --color-background-accent-red-subtle: #9A031E;
+    --color-background-accent-yellow-default: #FED651;
+    --color-background-accent-yellow-subtle: #8C7321;
+    --color-background-accent-purple-default: #A780EF;
+    --color-background-accent-purple-subtle: #472F6F;
+    --color-background-accent-pink-default: #EA66AA;
+    --color-background-accent-pink-subtle: #84244B;
+
+
+
+    /***********/
+    /* Border */
+    /***********/
+
+
+    --color-border-default: #343536;
+    /* high contrast backgrounds */
+    --color-border-default-inverse: #0D0E13;
+    /* borders that need more subtlety */
+    --color-border-subtle: #28282A;
+    --color-border-emphasis: #5B5B5D;
+    /* interactive borders, like secondary buttons */
+    --color-border-interactive-default: #5D9FEA;
+    --color-border-interactive-default-inverse: #0C44A1;
+    --color-border-interactive-hover: #9AC4F1;
+    --color-border-interactive-pressed: #C4DBF7;
+    /* FORMS, inputs, checkboxes, radio buttons */
+    --color-border-input-default: #757677;
+    --color-border-input-hover: #979798;
+    /* informative borders, like a message inline */
+    --color-border-info: #5D9FEA;
+    /* success */
+    --color-border-success: #4FCDA6;
+    /* warning */
+    --color-border-warning: #FF9544;
+    /* error */
+    --color-border-error: #FF9495;
+    /* destructive */
+    --color-border-destructive-default: #FF9495;
+    --color-border-destructive-hover: #FFBDBE;
+    --color-border-destructive-pressed: #FADCDC;
+    /* logo */
+    --color-border-logo: #343536;
+    /* selected state, like tabs, menu item, navigation bar */
+    --color-border-selected-default: #FED651;
+    /* a selected state that needs extra emphasis */
+    --color-border-selected-emphasis: #FED651;
+    /* the outline in focus states */
+    --color-border-focus: #5D9FEA;
+}
+
 
 /* ****** */
 /* MARK: algemene styling
@@ -447,13 +459,22 @@ h1, h2, h3, h4, h5, h6 {
     max-width: var(--breakpoint-l);
 }
 
-legend span, summary span {
-    font-size: 2rem;
-}
+
 
 input {
-    border: 2px solid var(--color-border-input-default);
+    color: var(--color-content-default);
+    padding: 0;
+    border: 1px solid var(--color-border-input-default);
     border-radius: 4px;
+    min-height: 44px;
+    min-width: 44px;
+    height: var(--input-height);
+    width: var(--input-width);
+    font-size: medium;
+    padding-left: 1rem;
+    background-color: var(--color-background-input);
+
+    
 
 }
 
@@ -512,53 +533,91 @@ input:not(.invalid), input:not(:invalid){
         right: 0;
         position: absolute;
         display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        margin-right: -1rem;
+        width: 1.5rem;
+        height:1.5rem;
+        margin-right: -2rem;
     }
 
     &:has(input:user-valid), &:has(input.valid) {
         &::after {
-            content: '';
-            background: url("/images/icons/check.svg") no-repeat center;
-            background-size: contain;
+            position: absolute;
+            right: 0;
+            top: 25%;
+            content: ""; 
+            margin-left: 0.5rem; 
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            margin-left: 0.5rem;
+            background-color: var(--color-border-success);
+            transition: 0.2s;
+
+            -webkit-mask: url("images/icons/check.svg") no-repeat center;
+            mask: url("images/icons/check.svg") no-repeat center;
+
+            -webkit-mask-size: contain;
+            mask-size: contain;
         }
 
     }
 
     &:has(input:user-invalid), &:has(input.invalid) {
         &::after {
-            content: '';
-            background: url("/images/icons/error.svg") no-repeat center;
-            background-size: contain;
+            position: absolute;
+            right: 0;
+            top: 25%;
+            content: ""; 
+            margin-left: 0.5rem; 
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            margin-left: 0.5rem;
+            background-color: var(--color-border-error);
+            transition: 0.2s;
+
+            -webkit-mask: url("images/icons/error.svg") no-repeat center;
+            mask: url("images/icons/error.svg") no-repeat center;
+
+            -webkit-mask-size: contain;
+            mask-size: contain;
         }
     }
 
 }
 
 input:not(.custom-error):user-invalid, input:not(.custom-error):user-invalid, .invalid {
-    border: 2px solid var(--color-border-error);
+    border: 1px solid var(--color-border-error);
 
     &:focus-visible {
+        border: 2px solid;
         border-color: var(--color-border-focus);
+        height: calc(var(--input-height) - 2px);
+        width: calc(var(--input-width) - 2px);
     }
 }
 
 
 
 input:not(.custom-error):user-valid, .valid {
-    border: 2px solid var(--color-border-success);
+    border: 1px solid var(--color-border-success);
     &:not(:focus-visible):hover {
         border-color: var(--color-border-success);
     }
 
     &:focus-visible {
+        border: 2px solid;
         border-color: var(--color-border-focus);
+        height: calc(var(--input-height) - 2px);
+        width: calc(var(--input-width) - 2px);
     }
 }
 
 input:focus-visible {
-    border: 2px solid var(--color-border-focus);
+    border: 2px solid;
+    border-color: var(--color-border-focus);
+    height: calc(var(--input-height) - 2px);
+    width: calc(var(--input-width) - 2px);
+
     outline: none;
     &:hover {
         border-color: var(--color-border-focus);
@@ -569,6 +628,32 @@ input:focus-visible {
     color: var(--color-content-error);
     margin: 0;
 }
+
+
+/* when the fieldset has no invalid inputs */
+/* form details > fieldset:not(:has(:user-invalid)) > legend {
+    position: relative;
+    
+    &::after{
+        position: absolute;
+        right: 0;
+        top: 0;
+        content: ""; 
+        margin-left: 0.5rem; 
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        margin-left: 0.5rem;
+        background-color: currentColor;
+        transition: 0.2s;
+
+        -webkit-mask: url("images/icons/check.svg") no-repeat center;
+        mask: url("images/icons/check.svg") no-repeat center;
+
+        -webkit-mask-size: contain;
+        mask-size: contain;
+    }
+} */
 
 
 
@@ -607,16 +692,91 @@ header {
 
         .content {
             display: flex;
-            align-items: center;
-            height: max-content;
-            gap: 0.5em;
-            
-            
-            svg {
-                width: auto;
-                height: 1.5rem;
-                padding-left: 2rem;
+            justify-content: space-between;
+            div:first-of-type {
+                display: flex;
+                align-items: center;
+                height: max-content;
+                gap: 0.5em;
+                svg {
+                    width: auto;
+                    height: 1.5rem;
+                    padding-left: 2rem;
+                }
             }
+            
+            /* slider/toggle light dark */
+            div:nth-of-type(2) {
+                input {
+                    margin-right: 1rem;
+                    appearance: none;
+                    background: var(--color-background-alpha-default);
+                    min-width: 0px;
+                    min-height: 0px;
+                    width: 2.8rem;
+                    height: 1.5rem;
+                    border-radius: 2rem;
+                    display: flex;
+                    align-items: center;
+                    padding: 2px;
+                    position: relative;
+                    color: white;
+
+                    /* bolletje */
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        transition: 0.2s;
+                        height: 1.2rem;
+                        aspect-ratio: 1;
+                        border-radius: 99rem;
+                        background-color: white;
+
+                    }
+
+                    &:checked::before {
+                        right:0.2rem;
+                    }
+
+                    /* x of haakje */
+                    &::after {
+                        content: ""; 
+                        margin-left: 0.5rem; 
+                        display: inline-block;
+                        width: 1rem;
+                        height: 1rem;
+                        background-color: currentColor;
+                        transition: 0.2s;
+                        position: absolute;
+                        right: 0.3rem;
+
+                        -webkit-mask: url("images/icons/close.svg") no-repeat center;
+                        mask: url("images/icons/close.svg") no-repeat center;
+
+                        -webkit-mask-size: contain;
+                        mask-size: contain;
+                    }
+
+                    &:checked::after {
+                        left: -0.3rem;
+                        -webkit-mask: url("images/icons/check.svg") no-repeat center;
+                        mask: url("images/icons/check.svg") no-repeat center;
+
+                        -webkit-mask-size: contain;
+                        mask-size: contain;
+                    }
+
+                    &:checked, &:hover {
+                        border: none;
+                    }
+
+                    &:checked {
+                        background-color: var(--color-background-accent-green-default);
+                    }
+                }
+            }
+            
         }
         
     }
@@ -640,12 +800,15 @@ header {
             height: 1rem;
         }
 
+        
+
     }
 
     
 
 
 }
+
 
 
 /* ****** */
@@ -658,6 +821,20 @@ main {
     background: var(--color-background-accent-gray-subtle);
     min-height: 100vh;
 
+    .content {
+        display: grid;
+    }
+
+    /* section toelichting */
+    .toelichting {
+        background: var(--color-background-brand-primary);
+        padding: var(--spacing-inset-l);
+        margin: var(--spacing-inset-m);
+        border-bottom: 2px solid var(--color-border-default);
+
+        color: var(--color-content-default);
+    }
+
     /* error overview */
     .error-overview {
         max-height: max-content;
@@ -665,6 +842,8 @@ main {
         margin: var(--spacing-inset-m);
         background: var(--color-background-error-default);
         color: var(--color-content-default-inverse);
+        width: clamp(4rem, 80%, 200rem);
+        justify-self: center;
 
         div {
             display: flex;
@@ -677,10 +856,22 @@ main {
         ul {
             color: var(--color-content-default-inverse);
             padding: var(--spacing-inset-m);
+            display: grid;
+            gap: 0.5em;
+            font-weight: bold;
+            margin: 0;
+
 
             a {
                 color: inherit;
+                text-decoration: none;
             }
+
+        }
+        svg {
+            height: 2rem;
+            width: 2rem;
+            margin-right: 1rem;
         }
     }
 
@@ -694,18 +885,55 @@ main {
         padding: var(--spacing-inset-m);
         margin: var(--spacing-inset-m);
         border-bottom: 2px solid var(--color-border-input-default);
+        
+        border-left: 6px solid var(--color-background-brand-primary);
 
         details {
-            border-left: 6px solid var(--color-border-interactive-default);
+            
+            height: max-content;
+            
+            /* border-right: 6px solid var(--color-border-interactive-default); */
+            
+            border-bottom: 2px solid var(--color-border-emphasis);
+            
+            &:first-of-type {
+                border-top: 2px solid var(--color-border-emphasis);
+            }
+            
             
 
             summary {
-                background: var(--color-background-interactive-default-inverse);
+                
+                font-size: x-large;
+                background: var(--color-background-accent-blue-subtle);
                 list-style: none;
                 display: flex;
                 align-items: center; 
                 cursor: pointer; 
                 color: var(--color-content-interactive-default);
+                padding: var(--spacing-inset-s);
+                
+                
+                position: sticky;
+                top: 0;
+                z-index: 1000;
+                height: 3rem;
+                position: relative;
+                
+
+                span {
+                    font-weight: bolder;
+                    margin-right: 0.5rem;
+                    font-size: xx-large;
+                }
+
+                &:hover {
+                    color: var(--color-content-interactive-hover);
+
+                    &::after {
+                        margin-left: 0.7rem;
+                    }
+                }
 
                 &::-webkit-details-marker {
                     display: none;
@@ -715,42 +943,67 @@ main {
                     content: ""; 
                     margin-left: 0.5rem; 
                     display: inline-block;
-                    width: 1rem;
-                    height: 1rem;
+                    width: 2rem;
+                    height: 2rem;
                     margin-left: 0.5rem;
                     background-color: currentColor;
+                    transition: 0.2s;
+                    position: absolute;
+                    right: 3rem;
 
                     -webkit-mask: url("images/icons/chevron-right.svg") no-repeat center;
                     mask: url("images/icons/chevron-right.svg") no-repeat center;
 
                     -webkit-mask-size: contain;
                     mask-size: contain;
+
+                    
                 }
             }
             
             &:not(:first-of-type) {
                 border-top: 0;
             }
+
         }
 
-        details[open] summary::after {
-            -webkit-mask: url("images/icons/chevron-down.svg") no-repeat center;
-            mask: url("images/icons/chevron-down.svg") no-repeat center;
 
-            -webkit-mask-size: contain;
-            mask-size: contain;
+        details[open] {
+            padding-bottom: 2rem;
             
+            border-bottom: 2px solid var(--color-border-emphasis);
+
+            summary {
+                
+
+                &::after {
+                    -webkit-mask: url("images/icons/chevron-down.svg") no-repeat center;
+                    mask: url("images/icons/chevron-down.svg") no-repeat center;
+
+                    -webkit-mask-size: contain;
+                    mask-size: contain;
+                }
+            }
             
         }
 
+        /* all buttons */
         button {
+            min-width: 80px;
+        }
+        
+
+        /* primary button*/
+        >button {
+            margin-top: 40px;
             border: none;
             border-bottom: 2px solid var(--color-background-interactive-hover);
             border-radius: 4px;
             background: var(--color-background-interactive-default);
             color: var(--color-content-interactive-default-inverse);
-            padding: var(--spacing-inset-s);
+            padding: var(--spacing-inset-m);
             position: relative;
+            width: clamp(150px, 30%, 12rem);
 
             &::before {
                 content: "";
@@ -778,5 +1031,317 @@ main {
 
 
         }
+
+        /* radio buttons */
+        .radio-wrapper {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr;
+            align-items: center;
+            gap: 0.5em;
+            
+            
+
+            input {
+                appearance: none;
+                border-color: var(--color-border-input-default);
+                background: var(--color-background-input);
+                margin: 0;
+                height: calc(var(--input-height) + 4px);
+
+                &:first-of-type{
+                    width: 80%;
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                }
+
+                &:nth-of-type(2) {
+                    width: 80%;
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                }
+
+                
+
+                &:hover {
+                    border-color: var(--color-border-input-hover);
+                    background: var(--color-background-hover-inverse);
+                }
+
+                &:checked {
+                    border-color: var(--color-border-selected-default);
+                    background-color: var(--color-background-selected-default);
+                }
+
+                &:focus-visible {
+                    border: 4px solid;
+                    border-color: var(--color-border-focus);
+                }
+            }
+
+            label {
+                position: relative;
+                z-index: 2;
+                margin-left: 1rem;
+                
+
+                &:first-of-type{
+                    width: 80%;
+                    grid-column: 1/2;
+                    grid-row: 1/2;
+                }
+
+                &:nth-of-type(2) {
+                    width: 80%;
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                }
+                
+            }
+        }
+
+    }
+
+    #question-five {
+        margin-left: 1rem;
+    }
+
+
+}
+
+
+
+/* legends */
+
+details > fieldset > legend {
+    margin-top: 2rem;
+    margin-bottom: 16px;
+
+    font-size: large;
+    width: 100%;
+    border-bottom: 2px solid var(--color-border-emphasis);
+    height: 2rem;
+    place-content: center;
+    height: 2rem;
+    background-color: var(--color-background-input);
+    color: var(--color-content-emphasis);
+    
+    span:first-of-type {
+        font-size: x-large;
     }
 }
+
+fieldset > fieldset > legend {
+    font-weight: bolder;
+    color: var(--color-content-emphasis);
+    
+}
+
+fieldset > fieldset > fieldset {
+    padding: 0;
+}
+
+
+
+/* inputs (not radios) */
+
+/* label styling */
+.input-wrapper, .radio-wrapper, #kopie-aangifte {
+    margin: 1rem 0 24px 0;
+}
+
+
+label {
+    font-weight: bolder;
+    color: var(--color-content-emphasis);
+}
+
+
+
+form p {
+    margin: 0;
+    color: var(--color-content-subtle);
+    
+}
+
+.error-message {
+    position: absolute;
+}
+
+
+
+
+/* section 3 */
+#section-three-a, #section-three-b, #section-three-c {
+    legend {
+        height: max-content;
+        padding-bottom: 0.5rem;
+    }
+}
+
+#section-three-a, #section-three-c {
+    
+
+    .input-container {
+        display: grid;
+        grid-template-columns: 4rem 1fr;
+        align-items: center;
+        padding: 0 12px;
+
+        label {
+            grid-row: 1/2;
+            grid-column: 2/3;
+
+            
+        }
+
+        input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            appearance: none;
+            grid-row: 1/2;
+            grid-column: 1/2;
+            height: 4rem;
+            width: 4rem;
+            padding: 1rem;
+            border: none;
+
+            border-radius: 99em;
+
+            &:hover {
+                background-color: var(--color-background-hover-inverse);
+            }
+
+            &::after {
+                display: block;
+                content: "";
+                height: 1rem;
+                width: 1rem;
+                border: 1px solid var(--color-border-input-default);
+                border-radius: 99em;
+            }
+
+            &:hover::after {
+                background-color: var(--color-background-interactive-hover-inverse);
+            }
+
+            &:checked::after {
+                border-color: var(--color-border-selected-default);
+                box-shadow: inset 0 0 0 0.25em var(--color-border-success);
+            }
+            
+        }
+    }
+
+    
+}
+
+/* verkrijgers */
+
+.verkrijgers-fieldset {
+    
+    
+    > legend {
+        font-size: large;
+    }
+
+    .verkrijger{
+        legend {
+            font-size: large;
+        }
+
+        margin: 0;
+        border: 1px solid var(--color-border-default);
+        padding: var(--spacing-inset-m);
+    }
+
+    .verwijder-button-container {
+        legend {
+            color: var(--color-content-emphasis);
+            font-weight: bold;
+        }
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+
+/* random styling */
+#receiver-input-group {
+    padding: var(--spacing-inset-l);
+}
+
+#section-three-c {
+    position: relative;
+}
+
+#err33 {
+    top: -0.4rem;
+   left: 2rem;
+}
+
+/* buttons */
+
+.secondary-button {
+    background-color: var(--color-background-input);
+    border: 1px solid var(--color-border-interactive-default);
+    padding: var(--spacing-inset-m);
+    color: var(--color-border-interactive-default);
+    border-radius: 4px;
+    margin-top: 16px;
+
+    max-width: 10rem;
+
+    &:hover {
+        color: var(--color-content-interactive-hover);
+
+        border-color: var(--color-border-interactive-hover);
+    }
+}
+
+.destructive-button {
+    background-color: var(--color-background-destructive-default);
+    color: var(--color-content-default-inverse);
+    border: 1px solid var(--color-border-interactive-default);
+    padding: var(--spacing-inset-xs);
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    border-color: var(--color-border-destructive-default);
+
+    &:hover {
+        background-color: var(--color-background-destructive-hover);
+        border-color: var(--color-border-destructive-hover);
+    }
+    &::before {
+        position: relative;
+        content: ""; 
+        display: inline-block;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: currentColor;
+        transition: 0.2s;
+
+        -webkit-mask: url("images/icons/trash.svg") no-repeat center;
+        mask: url("images/icons/trash.svg") no-repeat center;
+
+        -webkit-mask-size: contain;
+        mask-size: contain;
+    }
+}
+
+
+
+
+
+
+
+/* ********** */
+/* MARK: Footer
+/* ********** */

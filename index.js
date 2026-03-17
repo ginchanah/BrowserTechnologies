@@ -153,7 +153,7 @@ function elfProef (input) {
     // const input = event.target;
     let bsnValue = input.value.trim();
     let bsnValueSplit = bsnValue.split("");
-    const error = input.closest(".input-wrapper").nextElementSibling;
+    const error = input.closest(".input-wrapper").previousElementSibling;
 
     
 
@@ -378,7 +378,9 @@ function emptyError(input) {
     }
 }
 
-const notCustomInputs = Array.from(requiredInputs).filter(input => !input.classList.contains("custom-error"));
+const notCustomInputs = Array.from(requiredInputs).filter(
+    input => !input.classList.contains("custom-error") && input.type !== "radio"
+);
 
 notCustomInputs.forEach(input => {
     input.addEventListener("blur", () => emptyError(input));
@@ -446,15 +448,16 @@ numberInputs.forEach(input => {
 });
 
 function checkMinimumNumber(input) {
-    const error = input.nextElementSibling; // assumes <p> immediately after input
+    const errorId = input.getAttribute("aria-errormessage");
+    const errorMessage = errorId ? document.getElementById(errorId) : null;
 
-    if(!error) return;
+    if(!errorMessage) return;
 
     // check if empty
     if (input.value === "") {
         input.setCustomValidity("Veld is leeg");
-        error.classList.remove("hidden");
-        error.textContent = input.validationMessage;
+        errorMessage.classList.remove("hidden");
+        errorMessage.textContent = input.validationMessage;
         input.setAttribute("aria-invalid", "true");
         input.classList.remove("valid");
         input.classList.add("invalid");
@@ -464,8 +467,8 @@ function checkMinimumNumber(input) {
     // check if less than 0
     if (Number(input.value) < 0) {
         input.setCustomValidity("Vul een getal van minimaal 0 in");
-        error.classList.remove("hidden");
-        error.textContent = input.validationMessage;
+        errorMessage.classList.remove("hidden");
+        errorMessage.textContent = input.validationMessage;
         input.setAttribute("aria-invalid", "true");
         input.classList.remove("valid");
         input.classList.add("invalid");
@@ -474,8 +477,8 @@ function checkMinimumNumber(input) {
 
     // valid input
     input.setCustomValidity("");
-    error.classList.add("hidden");
-    error.textContent = "";
+    errorMessage.classList.add("hidden");
+    errorMessage.textContent = "";
     input.setAttribute("aria-invalid", "false");
     input.classList.add("valid");
     input.classList.remove("invalid");
@@ -493,8 +496,15 @@ function checkMinimumNumberEnd() {
 
 
 // nieuwe verkrijgers toevoegen!!!
-// mijn plan is om hier met javascript om elke button klik een nieuwe verkrijger toe te voegen en dan met css als het uitstaat krijg je gewoon 4 verkrijgers
-const invisibleReceiver = document.querySelectorAll(".verkrijger:not(:first-of-type)")
+const showFirstReceiverButton = document.getElementById("geen-verkrijgers-ja")
+
+showFirstReceiverButton.addEventListener("click", () => {
+    const firstHiddenReceiver = document.querySelector(".verkrijger.hidden")
+
+    firstHiddenReceiver.classList.remove("hidden")
+})
+
+const invisibleReceiver = document.querySelectorAll(".verkrijger")
 const addReceiverButton = document.querySelector(".verkrijger-toevoegen")
 
 invisibleReceiver.forEach(receiver => {
@@ -520,7 +530,7 @@ function addReceiver() {
         addReceiverButton.classList.add("hidden")
     }
 
-    getRemoveButton()
+ 
     updateReceiverNumbers()
     setRequiredAttribute();
     
@@ -551,11 +561,10 @@ function removeReceiver(event) {
      const button = event.currentTarget; // the clicked button
     const currentReceiver = button.closest(".verkrijger");
 
-    const firstHiddenReceiver = document.querySelector(".verkrijger.hidden");
 
-    if (firstHiddenReceiver) {
-        addReceiverButton.classList.remove("hidden");
-    }
+
+    addReceiverButton.classList.remove("hidden");
+
 
     currentReceiver.classList.add("hidden");
 
@@ -641,6 +650,11 @@ function errorOverview() {
                     console.log("Input heeft geen ID voor error", error.id);
                 } else {
                     errorSection.classList.remove("hidden")
+                    errorSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
                     errorSection.focus();
                     
                     const label = document.querySelector(`label[for="${input.id}"]`);

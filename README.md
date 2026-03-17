@@ -123,7 +123,36 @@ Wat heb ik vandaag gedaan?
 - Ik heb de tweede pattern toegepast. Ik had tot nu toe alleen maar vraag 3a in mijn code maar ik heb nu ook nog 3b en 3c toegevoegd. Dus ik heb eraan gewerkt dat ik met javascript nieuwe verkrijgers kan toevoegen, maar dat er ook een bepaald aantal verkrijgers beschikbaar zijn als de Javascript uitstaat. Ik voeg hier dynamisch met JS nieuwe HTML toe, maar ik heb ook verkrijgers die op display none staan. Ik heb ervoor gezorgd dat de button om nieuwe verkrijgers toe te voegen verdwijnt als je Javascript uitzet en dat alle 4 standaard verkrijgers te zien zijn. 
 - Verder heb ik alles aangepast wat nog niet goed werkte, ik heb opnieuw naar alle validatie gekeken en wat extra dingen toegevoegd
 - Ik heb verder een error samenvatting voor bovenin de pagina toegevoegd als je op submit klikt
-- 
+- Thuis heb ik nog fouten opgelost die ik in de laatste 5 minuten van de les heb gevonden
+
+Hoe lang duurde het?
+- de hele schooldag en een stukje van de avond
+
+Wat heb ik geleerd?
+- Niet zo veel...ik ben vooral heel veel door de war geraakt met Javascript. Ik heb niet het gevoel dat ik nog heel elegante code heb..
+
+Wat ga ik morgen doen?
+- Ik ga mijn Javascript niet meer aanraken voordat mijn vormgevinng helemaal af is
+
+
+### Dag 8 
+Wat heb ik vandaag gedaan?
+- Vandaag heb ik alleen maar aan vormgeving gewerkt.
+- Ik heb ermee gespeeld om alle legends sticky te maken omdat mijn formulier een heel lang scrollbare pagina is. Maar uiteindelijk heb ik besloten om dat niet te doen omdat het te onoverzichtelijk werd.
+- Ik had eerst alle errors na de input staan maar tijdens de Weekly Nerd over NL Design system werd gezegd dat dat niet handig was, dus ik heb de errors onder de labels gezet
+- Ik heb alle vormgeving afgekregen!
+- Aan het einde heb ik nog een light-darkmode slider gemaakt en de kleuren een klein beetje aangepast
+
+Hoe lang duurde het?
+- De hele dag
+
+Wat heb ik geleerd?
+- Ook al denk je alle kleuren van een design system goed te hebben toegepast klopt dat niet altijd als je de darkmode activeerd
+
+Wat ga ik morgen doen?
+- Misschien nog wat kleine aanpassingen maar eigenlijk ben ik wel klaar!
+
+
 
 
 
