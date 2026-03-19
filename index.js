@@ -553,6 +553,8 @@ const removeReceiverButton = document.querySelectorAll(".verwijder-verkrijger")
 
 removeReceiverButton.forEach(button => {
     button.addEventListener("click", removeReceiver);
+
+    button.classList.remove("hidden")
 });
 
 
@@ -690,6 +692,8 @@ function errorOverview() {
     });
 
 }
+
+
 
 const submitButton = document.querySelector("#submit-button")
 submitButton.addEventListener("click", checkValidation)

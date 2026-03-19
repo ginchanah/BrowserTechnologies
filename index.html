@@ -64,7 +64,9 @@
                         Gegevens van de verkrijgers
                     </li>
                 </ul>
-                <p>Uw gegevens worden alleen gebruikt voor de Aangifte Erfbelasting</p>
+                <p>Uw gegevens worden alleen gebruikt voor de Aangifte Erfbelasting.</p>
+
+                <p>Heeft u vragen over een van de onderdelen? Vind dan toe toelichtingen hier in <a href="https://download.belastingdienst.nl/belastingdienst/docs/toe_aangifte_erf_2025_suc0611t53fd.pdf" aria-label="Toelichting vraag 1b">de officiële Toelichting Erfbelasting</a>.</p>
             </section>
             <form action="" method="post">
                 
@@ -76,10 +78,12 @@
                         <legend><span>1a</span> Algemene gegevens van de overledene</legend>
         
                         <fieldset id="question-one">
-                            <label for="initials">Voorletter(s)</label>
-                            <p id="err1" class="error-message hidden" aria-live="polite"></p>
-                            <div class="input-wrapper">
-                                <input type="text" id="initials" class="uppercase initials" aria-errormessage="err1" aria-invalid="false" autocomplete="on" required>
+                            <div class="error-group">
+                                <label for="initials">Voorletter(s)</label>
+                                <p id="err1" class="error-message hidden" aria-live="polite"></p>
+                                <div class="input-wrapper">
+                                    <input type="text" id="initials" class="uppercase initials" aria-errormessage="err1" aria-invalid="false" autocomplete="on" required>
+                                </div>
                             </div>
                             
                             <label for="infix">Tussenvoegsel(s)</label>
@@ -338,7 +342,7 @@
                             <fieldset class="verkrijger">
                                 <div class="verwijder-button-container">
                                     <legend>Verkrijger 1</legend>
-                                    <button class="verwijder-verkrijger destructive-button" type="button"><span>Verwijder Verkrijger</span></button>
+                                    <button class="verwijder-verkrijger destructive-button hidden" type="button"><span>Verwijder Verkrijger</span></button>
                                 </div>
 
 
@@ -408,7 +412,7 @@
                             <fieldset class="verkrijger">
                                 <div class="verwijder-button-container">
                                     <legend>Verkrijger 2</legend>
-                                    <button class="verwijder-verkrijger destructive-button" type="button"><span>Verwijder Verkrijger</span></button>
+                                    <button class="verwijder-verkrijger destructive-button hidden" type="button"><span>Verwijder Verkrijger</span></button>
                                 </div>
 
 
@@ -477,7 +481,7 @@
                             <fieldset class="verkrijger">
                                 <div class="verwijder-button-container">
                                     <legend>Verkrijger 3</legend>
-                                    <button class="verwijder-verkrijger destructive-button" type="button"><span>Verwijder Verkrijger</span></button>
+                                    <button class="verwijder-verkrijger destructive-button hidden" type="button"><span>Verwijder Verkrijger</span></button>
                                 </div>
 
 
@@ -546,7 +550,7 @@
                             <fieldset class="verkrijger">
                                 <div class="verwijder-button-container">
                                     <legend>Verkrijger 4</legend>
-                                    <button class="verwijder-verkrijger destructive-button" type="button"><span>Verwijder Verkrijger</span></button>
+                                    <button class="verwijder-verkrijger destructive-button hidden" type="button"><span>Verwijder Verkrijger</span></button>
                                 </div>
 
 
